@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <title>MyHealthLib | myhealthlib Edit | Xtensio</title>
+  <meta name="description"
+    content="This is the edit view of a user-created folio on Xtensio. Create living docs with the intuitive editor and collaborate with anyone. Get started - FREE!">
+
+  <link href="/Content/styles/v-637099669432605426-froala-combined-1.css" rel="stylesheet" type="text/css" />
+
+
+  <link rel="icon" href="/Xtensio_favicon.ico" sizes="16x16 24x24 32x32 48x48 64x64 110x110 114x114 128x128"
+    type="image/vnd.microsoft.icon">
+  <link rel="apple-touch-icon-precomposed" href="/favicon-152.png">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="/favicon-144.png">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preload" href="/fonts/ProximaNova-Bold.woff2" as="font" crossorigin />
+  <link rel="preload" href="/fonts/ProximaNova-Light.woff2" as="font" crossorigin />
+  <link rel="preload" href="/fonts/ProximaNova-Reg.woff2" as="font" crossorigin />
+  <link rel="preload" href="/Content/styles/v-637355150588235151-site-2.css" as="style" type="text/css" />
+  <link href="/Content/font-awesome.min.css" rel="stylesheet" type="text/css" />
+  <link href="/Content/foundation-icons.css?637364056448577882" rel="stylesheet" type="text/css" />
+  <link href="/Content/froala/css/third_party/embedly.min.css" rel="stylesheet" type="text/css" />
+  <link href="/Content/froala/css/froala_editor.min.css " rel="stylesheet" type="text/css" />
+  <link href="/Content/froala/css/froala_style.min.css " rel="stylesheet" type="text/css" />
+  <link href="/Content/froala/css/plugins/colors.min.css " rel="stylesheet" type="text/css" />
+  <link href="/Content/froala/css/plugins/code_view.min.css " rel="stylesheet" type="text/css" />
+  <link href="/Content/froala/css/plugins/image.min.css" rel="stylesheet" type="text/css" />
+  <link href="/Content/froala/css/plugins/table.min.css " rel="stylesheet" type="text/css" />
+  <link href="/Content/froala/css/plugins/video.min.css " rel="stylesheet" type="text/css" />
+  <link href="/Content/froala/css/third_party/embedly.min.css " rel="stylesheet" type="text/css" />
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.11/d3.min.js"></script>
+  <script>
+    window.jQuery || document.write('<script src="/Scripts/jquery-2.1.4.min.js"><\/script>');
+    window.d3 || document.write('<script src="/Scripts/d3-3.5.11.min.js"><\/script>');
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+  <script src="/Scripts/jquery.signalR-2.2.3.min.js"></script>
+  <script src="/signalr/hubs"></script>
+
+  <script src="/Content/scripts/froala-combined.js"></script>
+
+  <script src="/Content/scripts/v-637355150815257895-vendor-2.js"></script>
+  <script src="/Content/scripts/v-637355150522411224-app-folio.js"></script>
+  <link href="/Content/styles/v-637355150829864637-vendor-2.css" rel="stylesheet" type="text/css" />
+  <link href="/Content/styles/v-637355150588235151-site-2.css" rel="stylesheet" type="text/css" />
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Organization",
+      "name": "Xtensio",
+      "url": "https://xtensio.com/",
+      "description": "Xtensio is a collaborative workspace where teams can easily create and share beautiful living documents.",
+      "logo": "https://xtensio.com/wp-content/themes/Divi-child/images/xtensio.svg",
+      "foundingDate": "2015",
+      "founders": [{
+          "@type": "Person",
+          "name": "Alper Cakir"
+        },
+        {
+          "@type": "Person",
+          "name": "Asli Sonceley"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Los Angeles",
+        "addressRegion": "CA",
+        "postalCode": "90028",
+        "addressCountry": "USA"
+      },
+      "sameAs": [
+        "https://www.facebook.com/xtensio",
+        "https://twitter.com/xtensio",
+        "https://plus.google.com/+xtensio",
+        "https://www.youtube.com/Xtensio",
+        "https://www.pinterest.com/xtensio/boards/",
+        "https://www.linkedin.com/company/xtensio/",
+        "https://app.xtensio.com/account/signin?ReturnUrl=%2F"
+      ]
+    }
+  </script>
+
+
+
+
+  <style>
+  </style>
+</head>
+
+<body>
+  <div id="antiForgeryContainer" style="display: none;">
+    <input name="__RequestVerificationToken" type="hidden"
+      value="_WdcdYVfVlgnH6sYk1ZvrFz6BJcPsJJiGZKyvxBrQjDnU-V5UUhkKaehguESnfiSlUU5zVRZJwL1aT1WUhn1RF-nIbbhIzyKStjjuSvkdxt_6oyaI4j3v3qyaY9qj4CZz0RAnA2" />
+  </div>
+  <div id="home-page">
+    <div class="container-fluid">
+      <div id="modules-preview-header" class="row"></div>
+      <div id="modules-preview-main" class="row"></div>
+    </div>
+  </div>
+  <div id="edit-page">
+    <div class="container-fluid">
+      <div id="template-message-wrapper" class="row">
+        <div id="template-message"></div>
+      </div>
+      <div id="modules-edit-header" class="row"></div>
+      <div id="modules-edit-main" class="row">
+        <div class="grid-div-wrapper">
+          <div class="grid-div">
+            <div class="col-xs-2">
+              <div class="grid-div-content">&nbsp;</div>
+            </div>
+            <div class="col-xs-2">
+              <div class="grid-div-content">&nbsp;</div>
+            </div>
+            <div class="col-xs-2">
+              <div class="grid-div-content">&nbsp;</div>
+            </div>
+            <div class="col-xs-2">
+              <div class="grid-div-content">&nbsp;</div>
+            </div>
+            <div class="col-xs-2">
+              <div class="grid-div-content">&nbsp;</div>
+            </div>
+            <div class="col-xs-2">
+              <div class="grid-div-content">&nbsp;</div>
+            </div>
+          </div>
+        </div>
+        <div id="edit-sections"></div>
+      </div>
+    </div>
+  </div>
+  <div id="saving-popup">
+    <span class="popup-text"></span>
+  </div>
+  <div id="uploading-popup">
+    <span class="popup-text"></span>
+  </div>
+  <div id="templates" style="display: none"></div>
+  <script>
+    $(function () {
+      var config = {
+        editMode: true,
+        verificationToken: $('#antiForgeryContainer input[name="__RequestVerificationToken"]').val(),
+        token: 'u029nwhj', //for convenience; folio will also have it
+        hasPass: false,
+        userName: 'tcbandolilegg@gmail.com',
+        userEmail: 'tcbandolilegg@gmail.com',
+        fullName: 'Thereza Cirstina Bandoli Legg',
+        currentVersion: 0,
+        moduleCount: 36,
+        plusInfo: {
+          "Referrals": 0,
+          "End": 1631925488000
+        },
+        baseUrl: 'https://myhealthlib.xtensio.com',
+        companyStages: [{
+          "Key": 1,
+          "Value": "Agriculture & Forestry"
+        }, {
+          "Key": 2,
+          "Value": "Business & Information"
+        }, {
+          "Key": 3,
+          "Value": "Construction/Utilities/Contracting "
+        }, {
+          "Key": 4,
+          "Value": "Education"
+        }, {
+          "Key": 5,
+          "Value": "Finance & Insurance"
+        }, {
+          "Key": 6,
+          "Value": "Food & Hospitality"
+        }, {
+          "Key": 7,
+          "Value": "Gaming"
+        }, {
+          "Key": 8,
+          "Value": "Health Services"
+        }, {
+          "Key": 9,
+          "Value": "Motor Vehicle"
+        }, {
+          "Key": 10,
+          "Value": "Natural Resources/Environmental"
+        }, {
+          "Key": 11,
+          "Value": "Personal Services"
+        }, {
+          "Key": 12,
+          "Value": "Real Estate & Housing"
+        }, {
+          "Key": 13,
+          "Value": "Safety/Security & Legal"
+        }, {
+          "Key": 14,
+          "Value": "Transportation"
+        }],
+        companyTypes: [{
+          "Key": 15,
+          "Value": "Advertising"
+        }, {
+          "Key": 2,
+          "Value": "Art/Creativity/Photography"
+        }, {
+          "Key": 1,
+          "Value": "B2B services"
+        }, {
+          "Key": 10,
+          "Value": "Big Data & Analytics"
+        }, {
+          "Key": 12,
+          "Value": "Cloud"
+        }, {
+          "Key": 7,
+          "Value": "Consumer Electronics"
+        }, {
+          "Key": 11,
+          "Value": "E-Commerce"
+        }, {
+          "Key": 16,
+          "Value": "Fundraising"
+        }, {
+          "Key": 3,
+          "Value": "Gaming/Entertainment"
+        }, {
+          "Key": 4,
+          "Value": "Hardware"
+        }, {
+          "Key": 8,
+          "Value": "Personalization"
+        }, {
+          "Key": 9,
+          "Value": "Quantified Self"
+        }, {
+          "Key": 5,
+          "Value": "Saas/Subscription"
+        }, {
+          "Key": 14,
+          "Value": "Sales & Marketing"
+        }, {
+          "Key": 13,
+          "Value": "Social Media"
+        }, {
+          "Key": 6,
+          "Value": "Technology"
+        }],
+        imageLibrary: [{
+          "Id": 1,
+          "ThumbUrl": "//images.xtensio.com/library/tiny/workspace-1.jpg",
+          "ImageUrl": "//images.xtensio.com/library/big/workspace-1.jpg"
+        }, {
+          "Id": 2,
+          "ThumbUrl": "//images.xtensio.com/library/tiny/workspace-5.jpg",
+          "ImageUrl": "//images.xtensio.com/library/big/workspace-5.jpg"
+        }, {
+          "Id": 3,
+          "ThumbUrl": "//images.xtensio.com/library/tiny/diamonds.jpg",
+          "ImageUrl": "//images.xtensio.com/library/big/diamonds.jpg"
+        }, {
+          "Id": 104,
+          "ThumbUrl": "//images.xtensio.com/library/tiny/blue-bg.png",
+          "ImageUrl": "//images.xtensio.com/library/big/blue-bg.png"
+        }],
+        msgType: {
+          "bell": 1,
+          "bRead": 2,
+          "admin": 3,
+          "loadMore": 4,
+          "event": 5
+        },
+        nType: {
+          "none": 0,
+          "referralSignup": 3,
+          "plusExpiring1Week": 4,
+          "plusExpiringToday": 5,
+          "plusTimeAdded": 6,
+          "dataCollectionSignup": 8,
+          "dataCollectionDailySignups": 9,
+          "transferFolioRequest": 11,
+          "transferFolioAccept": 12,
+          "transferFolioReject": 14,
+          "folioReceive": 15,
+          "folioDecline": 16,
+          "plusStarted": 17,
+          "subscribed": 18,
+          "plusExpire": 19,
+          "planChange": 20,
+          "planCancel": 21,
+          "cardUpdate": 22,
+          "billingSaved": 23,
+          "collaboratorRequest": 24,
+          "collaboratorAccept": 25,
+          "collaboratorReject": 27,
+          "collaboratorReceive": 28,
+          "collaboratorDecline": 29,
+          "collaboratorRemove": 30,
+          "collaboratorChange": 31,
+          "collaboratorRemoveHimself": 32,
+          "folioReverted": 33,
+          "sendCollaboratorFolioArchived": 34,
+          "freePlusExpire": 35,
+          "collaboratorRemoveToAllCollaborators": 36,
+          "collaboratorAddedToAllCollaborators": 37,
+          "folioUpgraded": 38,
+          "teamMemberAdded": 44,
+          "teamMemberRemoved": 45,
+          "teamMemberAccessChanged": 46,
+          "teamMemberAccessChangedToTO": 47,
+          "teamMemberAddedToTO": 49,
+          "teamMemberRemovedToTO": 50,
+          "copyMoveSectionToFolio": 51,
+          "teamFirstTimeSignin": 52,
+          "transferredFolios": 53,
+          "addedFromEditTemplate": 54,
+          "folioRecievedToTO": 55,
+          "teamPurchased": 56,
+          "delinquentUserDowngraded": 57,
+          "folioNameChanged": 58,
+          "channelCreatedOwner": 59,
+          "channelCreatedTO": 60,
+          "userJoinedChannel": 61,
+          "userJoinedChannelOwner": 62,
+          "userJoinedChannelTO": 63,
+          "userLeftChannel": 64,
+          "userLeftChannelOwner": 65,
+          "userLeftChannelTO": 66,
+          "folioAddedToChannel": 67,
+          "folioAddedToChannelOwner": 68,
+          "folioAddedToChannelTO": 69,
+          "folioRemovedFromChannel": 70,
+          "folioRemovedFromChannelOwner": 71,
+          "folioRemovedFromChannelTO": 72,
+          "channelDeleted": 73,
+          "channelDeletedOwner": 74,
+          "channelDeletedTO": 75,
+          "channelCreated": 76,
+          "userJoinedChannelSelf": 77,
+          "userLeftChannelSelf": 78,
+          "channelPrivacyChangedTeamVisible": 80,
+          "channelPrivacyChangedPrivate": 81,
+          "channelPrivacyChangedPrivateOwners": 82,
+          "subscriptionUpgrade": 85,
+          "upgradeToPaidPlan": 86,
+          "teamMemberRemovedForActivation": 87,
+          "teamMemberRemovedToTOForActivation": 88,
+          "teamTemplateCreated": 89,
+          "teamTemplateRemoved": 90,
+          "manualPlanUpgrade": 91,
+          "weeklyInsights": 92
+        },
+        autoRenew: 1,
+        sharePlusLink: 'https://myhealthlib.xtensio.com/Home/Refer',
+        fontFamily: null,
+        banner: 0,
+        recentCollaborators: [],
+        isBlocked: false,
+        stripePublic: 'pk_live_B7qXwn3UHncAsNvFUKrXRbrp',
+        isAdmin: false,
+        hasDiscount: false,
+        presentationMode: true,
+        everPlus: true,
+        timeStamp: 1600808844857,
+        lastSavedTimestamp: 1600808843477,
+        subCancelledDate: 0,
+        subCancelledUTC14: 0,
+        exportLimits: {
+          "LimitsImposed": false,
+          "CreditsLeft": 0
+        },
+        planCancel: '',
+        isTeam: true,
+        Team: {
+          "Id": 168503,
+          "Name": "myhealthlib",
+          "LogoUrl": "",
+          "TeamUrl": "myhealthlib.xtensio.com",
+          "Status": 1,
+          "Role": 1,
+          "RoleName": "Team Owner",
+          "ST": 54,
+          "Plan": "BasicAccessYearly",
+          "IsDelinquent": false,
+          "TotalFolios": 2,
+          "UserFolios": 2,
+          "MemberCount": 1,
+          "ownerEmail": "tcbandolilegg@gmail.com",
+          "IsTrial": false,
+          "IsTeamOwnerTrial": false,
+          "TeamOwnerId": "1c3d3ab5-d7a2-400b-89b5-3f82ae2b5328",
+          "plusExpire": "2021-09-18T00:38:08",
+          "plusExpireTime": 1631925488000,
+          "AvailableCredits": 0
+        },
+        UserTeams: [{
+          "Id": 168503,
+          "Name": "myhealthlib",
+          "LogoUrl": "",
+          "TeamUrl": "https://myhealthlib.xtensio.com",
+          "Status": 1,
+          "Role": 1,
+          "RoleName": "Team Owner",
+          "ST": 54,
+          "Plan": "BasicAccessYearly",
+          "IsDelinquent": false,
+          "TotalFolios": 2,
+          "UserFolios": 2,
+          "MemberCount": 0,
+          "ownerEmail": "tcbandolilegg@gmail.com",
+          "IsTrial": false,
+          "IsTeamOwnerTrial": false,
+          "TeamOwnerId": "1c3d3ab5-d7a2-400b-89b5-3f82ae2b5328",
+          "plusExpire": "0001-01-01T00:00:00",
+          "plusExpireTime": 0,
+          "AvailableCredits": 0
+        }],
+        TeamRoles: [{
+          "Id": 5,
+          "Name": "Free Guest"
+        }, {
+          "Id": 4,
+          "Name": "Premium Guest"
+        }, {
+          "Id": 7,
+          "Name": "Single Folio Guest"
+        }, {
+          "Id": 2,
+          "Name": "Team Admin"
+        }, {
+          "Id": 3,
+          "Name": "Team Member"
+        }, {
+          "Id": 1,
+          "Name": "Team Owner"
+        }],
+        Environment: 'live',
+        FreeUserLimitPerImage: 1048576,
+        PaidUserLimitPerImage: 5242880,
+        IsDelinquent: false,
+        StyleGuides: [{
+          "Id": 167964,
+          "Name": "myhealthlib",
+          "TeamFonts": [{
+            "Id": 167138,
+            "Name": "proxima-nova",
+            "SourceIdentifier": "proxima-nova",
+            "SourceString": "Xtensio",
+            "Status": 1,
+            "IsDefaultFontAppWide": false,
+            "CreatedUTC": "2020-09-18T00:38:20.973",
+            "ModifiedUTC": null,
+            "FontJson": {
+              "Name": "proxima-nova",
+              "IdString": "proxima-nova",
+              "LastModified": "4/29/2018",
+              "Version": "v1",
+              "FontStyle": null,
+              "FontWeight": null,
+              "UnicodeRange": null,
+              "FontUrl": null,
+              "FontUrlWoff": null,
+              "FontLocalName": null
+            },
+            "TeamId": 168503,
+            "FontBinary": null,
+            "FontCdnLink": ""
+          }, {
+            "Id": 167139,
+            "Name": "proxima-light",
+            "SourceIdentifier": "proxima-light",
+            "SourceString": "Xtensio",
+            "Status": 1,
+            "IsDefaultFontAppWide": true,
+            "CreatedUTC": "2020-09-18T00:38:20.98",
+            "ModifiedUTC": null,
+            "FontJson": {
+              "Name": "proxima-light",
+              "IdString": "proxima-light",
+              "LastModified": "4/29/2018",
+              "Version": "v1",
+              "FontStyle": null,
+              "FontWeight": null,
+              "UnicodeRange": null,
+              "FontUrl": null,
+              "FontUrlWoff": null,
+              "FontLocalName": null
+            },
+            "TeamId": 168503,
+            "FontBinary": null,
+            "FontCdnLink": ""
+          }, {
+            "Id": 167140,
+            "Name": "proxima-bold",
+            "SourceIdentifier": "proxima-bold",
+            "SourceString": "Xtensio",
+            "Status": 1,
+            "IsDefaultFontAppWide": false,
+            "CreatedUTC": "2020-09-18T00:38:20.983",
+            "ModifiedUTC": null,
+            "FontJson": {
+              "Name": "proxima-bold",
+              "IdString": "proxima-bold",
+              "LastModified": "4/29/2018",
+              "Version": "v1",
+              "FontStyle": null,
+              "FontWeight": null,
+              "UnicodeRange": null,
+              "FontUrl": null,
+              "FontUrlWoff": null,
+              "FontLocalName": null
+            },
+            "TeamId": 168503,
+            "FontBinary": null,
+            "FontCdnLink": ""
+          }, {
+            "Id": 167141,
+            "Name": "Tahoma",
+            "SourceIdentifier": "Tahoma",
+            "SourceString": "System",
+            "Status": 1,
+            "IsDefaultFontAppWide": false,
+            "CreatedUTC": "2020-09-18T00:38:20.983",
+            "ModifiedUTC": null,
+            "FontJson": {
+              "Name": "Tahoma",
+              "IdString": "Tahoma",
+              "LastModified": "4/29/2018",
+              "Version": "v1",
+              "FontStyle": null,
+              "FontWeight": null,
+              "UnicodeRange": null,
+              "FontUrl": null,
+              "FontUrlWoff": null,
+              "FontLocalName": null
+            },
+            "TeamId": 168503,
+            "FontBinary": null,
+            "FontCdnLink": ""
+          }, {
+            "Id": 167142,
+            "Name": "Times New Roman",
+            "SourceIdentifier": "Times New Roman",
+            "SourceString": "System",
+            "Status": 1,
+            "IsDefaultFontAppWide": false,
+            "CreatedUTC": "2020-09-18T00:38:20.987",
+            "ModifiedUTC": null,
+            "FontJson": {
+              "Name": "Times New Roman",
+              "IdString": "Times New Roman",
+              "LastModified": "4/29/2018",
+              "Version": "v1",
+              "FontStyle": null,
+              "FontWeight": null,
+              "UnicodeRange": null,
+              "FontUrl": null,
+              "FontUrlWoff": null,
+              "FontLocalName": null
+            },
+            "TeamId": 168503,
+            "FontBinary": null,
+            "FontCdnLink": ""
+          }, {
+            "Id": 167143,
+            "Name": "Verdana",
+            "SourceIdentifier": "Verdana",
+            "SourceString": "System",
+            "Status": 1,
+            "IsDefaultFontAppWide": false,
+            "CreatedUTC": "2020-09-18T00:38:20.987",
+            "ModifiedUTC": null,
+            "FontJson": {
+              "Name": "Verdana",
+              "IdString": "Verdana",
+              "LastModified": "4/29/2018",
+              "Version": "v1",
+              "FontStyle": null,
+              "FontWeight": null,
+              "UnicodeRange": null,
+              "FontUrl": null,
+              "FontUrlWoff": null,
+              "FontLocalName": null
+            },
+            "TeamId": 168503,
+            "FontBinary": null,
+            "FontCdnLink": ""
+          }],
+          "TeamColors": [{
+            "Id": 2197282,
+            "HexCode": "#0946B8",
+            "IsDefault": false
+          }, {
+            "Id": 2197283,
+            "HexCode": "#FFD271",
+            "IsDefault": false
+          }, {
+            "Id": 2197284,
+            "HexCode": "#FD9F4D",
+            "IsDefault": false
+          }, {
+            "Id": 2197285,
+            "HexCode": "#E95F5E",
+            "IsDefault": false
+          }, {
+            "Id": 2197286,
+            "HexCode": "#FFFFFF",
+            "IsDefault": false
+          }, {
+            "Id": 2197287,
+            "HexCode": "#DCBB9F",
+            "IsDefault": false
+          }, {
+            "Id": 2197288,
+            "HexCode": "#76D5E5",
+            "IsDefault": false
+          }, {
+            "Id": 2197289,
+            "HexCode": "#6486A5",
+            "IsDefault": false
+          }, {
+            "Id": 2197290,
+            "HexCode": "#1C65DB",
+            "IsDefault": false
+          }, {
+            "Id": 2197291,
+            "HexCode": "#D45D77",
+            "IsDefault": false
+          }, {
+            "Id": 2197292,
+            "HexCode": "#9D557C",
+            "IsDefault": false
+          }, {
+            "Id": 2197293,
+            "HexCode": "#7E8589",
+            "IsDefault": false
+          }, {
+            "Id": 2197294,
+            "HexCode": "#052B3E",
+            "IsDefault": true
+          }],
+          "TeamId": 168503,
+          "UserId": "1c3d3ab5-d7a2-400b-89b5-3f82ae2b5328",
+          "DefaultFontFamily": "proxima-light",
+          "FallbackFontFamily": "proxima-light",
+          "DefaultColor": "#052B3E",
+          "IsDefault": true,
+          "maxNumberOfFonts": 15,
+          "maxNumberOfColors": 27,
+          "StylePickerApi": "https://stylepicker.xtensio.com/query?url=",
+          "CreatedUTC": "2020-09-18T00:38:20.913",
+          "ModifiedUTC": "2020-09-18T18:00:11.143"
+        }],
+        Curl: 'u029nwhj',
+        ShowGdprConsent: false,
+        ExportPreviewEnabled: 'true',
+        ExportPreviewInitialLoadEnabled: 'false',
+        ExportPreviewSaveToBlobEnabled: 'true',
+        ShowOnboarding: true,
+        saveInterval: 60000,
+        DefaultColors: [{
+          "HexCode": "#66D7C4",
+          "IsDefault": false
+        }, {
+          "HexCode": "#FFD271",
+          "IsDefault": false
+        }, {
+          "HexCode": "#FD9F4D",
+          "IsDefault": false
+        }, {
+          "HexCode": "#E95F5E",
+          "IsDefault": false
+        }, {
+          "HexCode": "#FFFFFF",
+          "IsDefault": false
+        }, {
+          "HexCode": "#DCBB9F",
+          "IsDefault": false
+        }, {
+          "HexCode": "#76D5E5",
+          "IsDefault": false
+        }, {
+          "HexCode": "#6486A5",
+          "IsDefault": false
+        }, {
+          "HexCode": "#2E5668",
+          "IsDefault": false
+        }, {
+          "HexCode": "#D45D77",
+          "IsDefault": false
+        }, {
+          "HexCode": "#9D557C",
+          "IsDefault": false
+        }, {
+          "HexCode": "#7E8589",
+          "IsDefault": false
+        }],
+        AppCdnUrl: 'not-set',
+        DisableP: true,
+        PersonalSpaceFolios: 0,
+        isTrial: false,
+        trialConverted: true,
+        isTrialCanceled: false,
+        isTeamOwnerTrailing: false,
+        ReActivationData: {
+          "LastPlan": null,
+          "LastST": 0
+        },
+        newFolioViewActive: '1',
+        perSaveApiCall: 3,
+        isEduDomain: false,
+        userStyleSelected: false,
+      }
+      var folio = {
+        "ID": 1079389,
+        "TimeStamp": "2020-09-22T21:07:23.477",
+        "Token": "u029nwhj",
+        "Store": "{\"style\":\".sop-header a{color:white;}\\n.sop-header a:hover{color:white;text-decoration:none;}\\n.sop-header h1{color:white;}\\n.sop-email-form .msg p {color: #FFFFFF;font-size: 30px;}\"}",
+        "HasPass": false,
+        "GetPass": false,
+        "Private": false,
+        "Indexed": false,
+        "ParentID": 1,
+        "NumberOfEdits": 86,
+        "Version": 2,
+        "TemplateMessage": "<style scoped>#template-message{max-width:1400px;margin:0 auto;padding:35px 20px 55px;color:#011925;text-align:center;position:relative;}#template-message h2{padding:10px;font-size:36px;font-family:\"Proxima-Light\",Helvetica,sans-serif;margin-top:10px;font-weight:normal;}#template-message p{font-size:18px;}#template-message a{text-decoration:underline;color:#011925;position:relative;font-family:\"Proxima-Bold\",Helvetica,sans-serif;}#template-message a:hover{color:#4C7BA0;cursor:pointer;}#template-message .howto-blk{display:inline-block;max-width:316px;vertical-align:top;margin-top:25px;}#template-message .howto-blk img{width:50px;margin-bottom:10px;}#template-message .howto-blk p{margin:auto 38px;font-weight:normal;}#template-message .howto-blk p span{font-family:Proxima-Bold,Helvetica,sans-serif;}</style>\r\n<div class=\"howto-blk\">\r\n    <i class=\"icon-Logo\" style=\"font-size: 50px;margin-bottom: 10px;display: inline-block;vertical-align: top;\"></i>\r\n    <p>Click the Xtensio logo to <span>return to your dashboard</span> and manage your folios.</p>\r\n</div>\r\n<div class=\"howto-blk\">\r\n    <img src=\"/img/popup/common/howtobanner/addcollaborator2@2x.png\" style=\"width: 70px;margin-top: -10px;margin-bottom: 0px;\">\r\n    <p><span>Add collaborators</span> to work on the same document at the same time.</p>\r\n</div>\r\n<div class=\"howto-blk\">\r\n    <img src=\"/img/popup/common/howtobanner/autosave@2x.png\">\r\n    <p>All changes are <span>saved automatically.</span></p>\r\n</div>\r\n<div class=\"howto-blk\">\r\n    <img src=\"/img/popup/common/howtobanner/privacy@2x.png\">\r\n    <p>This is a private document or a live web page, <span>adjust privacy</span> and get the link.</p>\r\n</div>",
+        "FolioName": "MyHealthLib",
+        "CurrentVersion": 0,
+        "BgUrl": null,
+        "BgPositionY": null,
+        "BgPositionX": null,
+        "BgSize": null,
+        "CreatedUtc": 1600389494907,
+        "LastSavedUtc": 1600808843477,
+        "TileImage": null,
+        "PresentationMode": true,
+        "EditTemplate": false,
+        "Modules": [{
+          "Records": [],
+          "ID": 20844255,
+          "Tag": 3,
+          "Key": "228599",
+          "Type": "DataModule",
+          "Data": "{\"Type\":\"DataModule\",\"Sections\":[{\"Order\":1,\"Tag\":8,\"ModIds\":[26,12],\"BgUrl\":\"//images.xtensio.com/tempimages/big/hpxc2oz9/qwpLNQAYZkmKz7UFdcFAeQ.jpg\"},{\"Order\":2,\"Tag\":22,\"ModIds\":[30]},{\"Order\":3,\"Tag\":24,\"ModIds\":[14]},{\"Order\":4,\"Tag\":26,\"ModIds\":[6,13]},{\"Order\":5,\"Tag\":28,\"ModIds\":[33,7]},{\"Order\":6,\"Tag\":30,\"ModIds\":[4,15,17,16,18]},{\"Order\":7,\"Tag\":11,\"ModIds\":[44,40,41,42,43]},{\"Order\":8,\"Tag\":25,\"ModIds\":[46,47,48,49]},{\"Order\":9,\"Tag\":9,\"ModIds\":[38]},{\"Order\":10,\"Tag\":32,\"ModIds\":[34],\"BgUrl\":\"//images.xtensio.com/library/big/workspace-1.jpg\"}],\"Donut\":{\"showError\":true},\"Exports\":{\"sec\":true,\"format\":\"PNG\",\"orient\":\"portrait\",\"mode\":\"screen\",\"cimg\":true,\"autofill\":false,\"rb\":false,\"paper\":\"612x792\"}}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844256,
+          "Tag": 4,
+          "Key": "228600",
+          "Type": "Text",
+          "Data": "{\"Type\":\"Text\",\"Cols\":\"12\",\"Html\":\"<h2 style=\\\"text-align: center\\\"><span style=\\\"font-family: proxima-bold, Helvetica, sans-serif; font-size: 36px\\\">Fundadoras</span></h2>\",\"Align\":\"left\",\"Theme\":\"#052B3E\",\"Header\":\"Edit me\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844257,
+          "Tag": 6,
+          "Key": "228602",
+          "Type": "Text",
+          "Data": "{\"Type\":\"Text\",\"Cols\":\"6\",\"Html\":\"<h2 class=\\\"fr-tag\\\"><span style=\\\"font-family: proxima-bold, Helvetica, sans-serif; font-size: 36px\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">Problemas</font></font></span></h2><p class=\\\"fr-tag\\\">Com tantas informações sobre a saúde pessoas e históricos familiares fica difícil se lembrar de tudo.</p><p class=\\\"fr-tag\\\"><span style=\\\"font-size: 24px\\\"></span><br></p><ul class=\\\"fr-tag\\\"><li class=\\\"fr-tag\\\"><p class=\\\"fr-tag\\\"><span style=\\\"font-size: 18px\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">Preocupação com a saúde de forma continua</font></font></span></p></li><li class=\\\"fr-tag\\\"><p class=\\\"fr-tag\\\"><span style=\\\"font-size: 18px\\\">Necessidade de guardar históricos médicos de forma organizada&nbsp;</span></p></li><li class=\\\"fr-tag\\\"><p class=\\\"fr-tag\\\"><span style=\\\"font-size: 18px\\\">Ter acesso &nbsp;rapido, simples e em quaquer lugar</span></p></li><li class=\\\"fr-tag\\\"><p class=\\\"fr-tag\\\"><span style=\\\"font-size: 18px\\\">Acesso a históricos médicos de ascendentes familiares</span></p></li><li class=\\\"fr-tag\\\"><p class=\\\"fr-tag\\\"><span style=\\\"font-size: 18px\\\">Fornecer &nbsp;de maneira &nbsp;simples históricos na hora de uma consulta</span></p></li><p><br></p></ul>\",\"Align\":\"left\",\"Theme\":\"#052b3e\",\"Header\":\"Edit me\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844258,
+          "Tag": 7,
+          "Key": "228603",
+          "Type": "Text",
+          "Data": "{\"Type\":\"Text\",\"Cols\":\"6\",\"Html\":\"<h2 class=\\\"fr-tag\\\"><span style=\\\"font-family: proxima-bold, Helvetica, sans-serif; font-size: 36px\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">FAQs&nbsp;</font></font></span></h2><h4 class=\\\"fr-tag\\\"><br></h4><h4 class=\\\"fr-tag\\\"><span style=\\\"font-family: proxima-bold, Helvetica, sans-serif\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">Que perguntas devo responder?</font></font></span><span style=\\\"line-height: 21.6px\\\"><br></span></h4><p><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">Armazenamento digital de exames</font></font></font></font></p><p><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">Controle de horários de medicamentos</font></font></font></font></p><p class=\\\"fr-tag\\\" style=\\\"margin-left: 0px\\\"><br></p><h4 class=\\\"fr-tag\\\" style=\\\"margin-left: 0px\\\"><span style=\\\"font-family: proxima-bold, Helvetica, sans-serif\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">Quantas perguntas devo incluir?&nbsp;</font></font></span><strong style=\\\"line-height: 21.6px\\\"><br></strong></h4><p class=\\\"fr-tag\\\" style=\\\"margin-left: 0px\\\"><span style=\\\"line-height: 21.6px\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">1 vez por semana&nbsp; lançar nas redes&nbsp; mini conteúdos sobre saúde, e uma vez por&nbsp; mês, realizar live entrevista com especialistas da área da saúde.</font></font></span></p><p class=\\\"fr-tag\\\"><br></p><h4 class=\\\"fr-tag\\\"><span style=\\\"font-family: proxima-bold, Helvetica, sans-serif\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">E se eu não tiver respostas para todas as perguntas?&nbsp;</font></font></span><span style=\\\"line-height: 21.6px\\\"><br></span></h4><p class=\\\"fr-tag\\\"><span style=\\\"line-height: 21.6px\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">A equipe responsável por conteúdos, será acionada pra responder&nbsp; quaisquer perguntas que não estiverem na base de dados de conecimentos</font></font></span></p><p class=\\\"fr-tag\\\"><br></p>\",\"Align\":\"left\",\"Theme\":\"#052b3e\",\"Header\":\"Edit me\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844259,
+          "Tag": 10,
+          "Key": "228606",
+          "Type": "Images",
+          "Data": "{\"Type\":\"Images\",\"Theme\":\"#FFF\",\"Align\":\"center\",\"Items\":[{\"ID\":\"1\",\"Url\":\"//images.xtensio.com/tempimages/big/hpxc2oz9/mWnIetFKvkmEt8j2SjMnCg.png\",\"Val\":\"31\",\"link\":\"https://xtensio.com/\"}],\"Cols\":2,\"Html\":\"Images\",\"Head\":\"2\",\"Txt\":\"2\",\"Header\":\"Edit me\",\"BgPositionY\":\"68.12694032424974%\",\"BgPositionX\":\"57.79158699808795%\",\"BgSize\":\"cover\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844260,
+          "Tag": 12,
+          "Key": "228608",
+          "Type": "Social",
+          "Data": "{\"Type\":\"Social\",\"Theme\":\"#4C7BA0\",\"Cols\":12,\"Align\":\"center\",\"Header\":\"Edit me\",\"FacebookUrl\":\"https://business.facebook.com/myhealthlib/\",\"InstagramUrl\":\"https://www.instagram.com/myhealthlib/\",\"LinkedInUrl\":\"https://www.linkedin.com/company/myhealthlib/\",\"YoutubeUrl\":\"https://www.youtube.com/channel/UCfbzvYNtlvFh1zwUF1LKFJg\",\"CustomUrl\":\"\",\"TwitterUrl\":\"https://@myhealthlib\",\"PinterestUrl\":\"https://br.pinterest.com/myhealthlib\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844261,
+          "Tag": 13,
+          "Key": "228609",
+          "Type": "Text",
+          "Data": "{\"Type\":\"Text\",\"Cols\":\"6\",\"Html\":\"<h2 class=\\\"fr-tag\\\"><span style=\\\"color: inherit; font-family: proxima-bold, Helvetica, sans-serif; font-size: 36px\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">Soluções&nbsp;</font></font></span></h2><p class=\\\"fr-tag\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">Por que sua empresa é a mais adequada para fornecer soluções? </font></font></font><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">Apresente os recursos e capacidades que definem seu serviço e o tornam a principal ferramenta para atender às necessidades dos consumidores.&nbsp;</font></font></font></font></p><p class=\\\"fr-tag\\\"><br></p><ul class=\\\"fr-tag\\\"><li class=\\\"fr-tag\\\"><p class=\\\"fr-tag\\\"><span style=\\\"font-size: 18px\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">Tranquilidade quando ao armazenamento de dados</font></font></span></p></li><li class=\\\"fr-tag\\\"><p class=\\\"fr-tag\\\"><span style=\\\"font-size: 18px\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">Categorização de resultados de exames</font></font></span></p></li><li class=\\\"fr-tag\\\"><p class=\\\"fr-tag\\\"><span style=\\\"font-size: 18px\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">Armazenamento em nuvem de fácil acesso</font></font></span></p></li><li class=\\\"fr-tag\\\"><p class=\\\"fr-tag\\\"><span style=\\\"font-size: 18px\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">Históricos médicos de até 4 gerações ascendentes</font></font></span></p></li><li class=\\\"fr-tag\\\"><p class=\\\"fr-tag\\\"><span style=\\\"font-size: 18px\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">Transferência de dados entre médico paciente</font></font></span></p></li><li class=\\\"fr-tag\\\"><p class=\\\"fr-tag\\\"><span style=\\\"font-size: 18px\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">Registros automáticos ou&nbsp; manuais</font></font></span></p></li><li class=\\\"fr-tag\\\"><p class=\\\"fr-tag\\\"><span style=\\\"font-size: 18px\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">Conexões com instituições que possuam resultados de exames</font></font></span></p></li><p><br></p><p><br></p></ul>\",\"Align\":\"left\",\"Theme\":\"#052b3e\",\"Header\":\"Edit me\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844262,
+          "Tag": 14,
+          "Key": "228610",
+          "Type": "Canvas",
+          "Data": "{\"Type\":\"Canvas\",\"Cols\":\"12\",\"Arr\":[9,3],\"Theme\":\"#052B3E\",\"Mods\":[{\"Tag\":20,\"Col\":0,\"Row\":0},{\"Tag\":19,\"Col\":0,\"Row\":1},{\"Tag\":21,\"Col\":1,\"Row\":0}],\"Header\":\"Title\",\"Head\":\"2\",\"Border\":\"2\",\"BgColor\":\"rgba(0,0,0,0)\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844263,
+          "Tag": 15,
+          "Key": "228611",
+          "Type": "Images",
+          "Data": "{\"Type\":\"Images\",\"Theme\":\"#4C7BA0\",\"Items\":[{\"ID\":\"1\",\"Url\":\"//images.xtensio.com/tempimages/big/hpxc2oz9/RHw-V8TR3ki_IjVnlDaQgw.png\",\"Val\":\"100\"}],\"Cols\":\"2\",\"Align\":\"left\",\"Html\":\"Images\",\"Head\":\"2\",\"Txt\":\"2\",\"Header\":\"Edit me\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844264,
+          "Tag": 16,
+          "Key": "228612",
+          "Type": "Images",
+          "Data": "{\"Type\":\"Images\",\"Theme\":\"#4C7BA0\",\"Items\":[{\"ID\":\"1\",\"Url\":\"//images.xtensio.com/tempimages/big/hpxc2oz9/7pI3Vn4cgkOFBT-swx4zzQ.jpg\",\"Val\":\"100\"}],\"Cols\":\"2\",\"Align\":\"left\",\"Html\":\"Images\",\"Head\":\"2\",\"Txt\":\"2\",\"Header\":\"Edit me\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844265,
+          "Tag": 17,
+          "Key": "228613",
+          "Type": "Text",
+          "Data": "{\"Type\":\"Text\",\"Cols\":\"4\",\"Html\":\"<h2 class=\\\"fr-tag\\\">Thereza Bandoli&nbsp;</h2><h4 class=\\\"fr-tag\\\">Fundadora e CEO</h4><p class=\\\"fr-tag\\\">A mais de 30 anos atuando na área de TI, &nbsp;Atuou em &nbsp;varias empresas como analista de suporte, &nbsp;consultora de Ti, Implantação de redes, criação do PDI, Instrutora de desenvolvimento e infraestrutura de redes. &nbsp;</p><p class=\\\"fr-tag\\\">myhealthlib.comercial@gmail.com</p>\",\"Align\":\"left\",\"Theme\":\"#052B3E\",\"Header\":\"Edit me\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844266,
+          "Tag": 18,
+          "Key": "228614",
+          "Type": "Text",
+          "Data": "{\"Type\":\"Text\",\"Cols\":\"4\",\"Html\":\"<h2 class=\\\"fr-tag\\\">Carolina Bandoli</h2><h4 class=\\\"fr-tag\\\">Cofundadora e CMO</h4><p class=\\\"fr-tag\\\">Criativa e com grande facilidade em comunicação, especializada em UX/UI&nbsp;</p><p class=\\\"fr-tag\\\"><br></p><p class=\\\"fr-tag\\\">email@domainname.com</p>\",\"Align\":\"left\",\"Theme\":\"#052B3E\",\"Header\":\"Edit me\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844267,
+          "Tag": 19,
+          "Key": "228646",
+          "Type": "Images",
+          "Data": "{\"Type\":\"Images\",\"Theme\":\"#052B3E\",\"Align\":\"left\",\"Items\":[{\"ID\":\"1\",\"Url\":\"//images.xtensio.com/tempimages/big/hpxc2oz9/NaPHGJCUyU6U4lHHi12GRg.png\",\"Val\":\"100\"}],\"Cols\":\"2\",\"Html\":\"Images\",\"Head\":\"2\",\"Txt\":\"2\",\"Header\":\"Edit me\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844268,
+          "Tag": 20,
+          "Key": "228648",
+          "Type": "Text",
+          "Data": "{\"Type\":\"Text\",\"Theme\":\"#052B3E\",\"Html\":\"<h2 class=\\\"fr-tag\\\"><span style=\\\"font-family: proxima-bold, Helvetica, sans-serif; font-size: 36px\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">MyHealthLib</font></font></span></h2><p><br></p><p><span>É&nbsp;</span>uma plataforma/app que permite armazenar históricos médicos de várias origens não só exames, mas também registros de doenças doenças hereditárias, &nbsp;alergias medicamentosas e alimentares para &nbsp;controles e acompanhamentos. &nbsp;Permite também o controle de consultas, vacinas, etc &nbsp;facilitando o acompanhamento tudo relacionada com a saúde fazendo assim que seja viável monitorar todos os eventos de saúde.\\n</p>\",\"Cols\":\"4\",\"Align\":\"left\",\"Header\":\"Edit me\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844269,
+          "Tag": 21,
+          "Key": "1270446",
+          "Type": "Text",
+          "Data": "{\"Type\":\"Text\",\"Theme\":\"#052B3E\",\"Html\":\"<h2 class=\\\"fr-tag\\\"><span style=\\\"font-family: proxima-bold, Helvetica, sans-serif\\\"><span style=\\\"font-size: 36px\\\">Milestones</span>&nbsp;</span></h2><p class=\\\"fr-tag\\\"><br></p><p class=\\\"fr-tag\\\"><span style=\\\"font-size: 18px\\\">Startup Founded. </span><span style=\\\"color: #CCCCCC; line-height: 21.6px\\\"><br>26 de Junho de 2020</span></p><p class=\\\"fr-tag\\\"><br></p><p class=\\\"fr-tag\\\"><span style=\\\"line-height: 21.6px\\\"><span style=\\\"font-size: 18px\\\">MVP lançado. </span>&nbsp;</span><span style=\\\"color: #CCCCCC; line-height: 21.6px\\\"><br> Novembro de 2020</span></p><p class=\\\"fr-tag\\\"><br></p><p class=\\\"fr-tag\\\"><span style=\\\"line-height: 21.6px; font-size: 18px\\\">Investimentos</span><span style=\\\"color: #CCCCCC; line-height: 21.6px\\\"><br>aguardando</span></p><p class=\\\"fr-tag\\\"><br></p><p class=\\\"fr-tag\\\"><span style=\\\"line-height: 21.6px; font-size: 18px\\\">Equipe 2 colaboradores</span><span style=\\\"line-height: 21.6px; color: #CCCCCC\\\"><br>26 de Junho de 2020\\n&nbsp;</span></p><p class=\\\"fr-tag\\\"><br></p><p class=\\\"fr-tag\\\"><span style=\\\"line-height: 21.6px; font-size: 18px\\\">10 Usuários ativos.&nbsp;</span><span style=\\\"line-height: 21.6px; color: #CCCCCC\\\"><br>31 de dezembro de 2020</span></p><p class=\\\"fr-tag\\\"><br></p><p class=\\\"fr-tag\\\"><span style=\\\"line-height: 21.6px; font-size: 18px\\\">50 Usuários ativos.&nbsp;</span><span style=\\\"color: #CCCCCC; line-height: 21.6px\\\"><br>31 de março de 2021</span></p><p class=\\\"fr-tag\\\"><br></p><p class=\\\"fr-tag\\\"><span style=\\\"line-height: 21.6px; font-size: 18px\\\">200 Usuários ativos.&nbsp;</span><span style=\\\"line-height: 21.6px; color: #CCCCCC\\\"><br>31 de junho de 2021</span></p>\",\"Cols\":\"4\",\"Align\":\"left\",\"Header\":\"Edit me\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844270,
+          "Tag": 23,
+          "Key": "3348991",
+          "Type": "Text",
+          "Data": "{\"Type\":\"Text\",\"Cols\":\"12\",\"Align\":\"left\",\"Theme\":\"#0946b8\",\"Html\":\"<h1 style=\\\"text-align: center\\\"><span style=\\\"font-family: proxima-bold, Helvetica, sans-serif\\\"><span style=\\\"color: rgb(25, 69, 159); font-size: 40px\\\">MyHea </span><span style=\\\"color: rgb(25, 69, 159); font-size: 40px\\\">lthLib</span></span></h1><br><br><br><br><br><br><br><br><br><h3 style=\\\"text-align: center\\\"><span><strong>A saúde na palma das mãos</strong></span></h3><p style=\\\"text-align: center\\\"><span style=\\\"color: rgb(255, 255, 255)\\\"><a href=\\\"#\\\"></a></span><strong><span style=\\\"color: rgb(9, 70, 184)\\\"><a href=\\\"//www.ascenderideias.com\\\"><span style=\\\"font-size: 20px\\\">www.ascenderideias.com.br/myhealthlib</span></a></span></strong></p>\",\"Header\":\"Edit me\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844271,
+          "Tag": 26,
+          "Key": "3348992",
+          "Type": "Canvas",
+          "Data": "{\"BgColor\":\"rgba(0,0,0,0)\",\"Cols\":\"12\",\"Type\":\"Canvas\",\"Mods\":[{\"Tag\":23,\"Col\":1,\"Row\":0},{\"Tag\":10,\"Col\":2,\"Row\":0}],\"Header\":\"Title\",\"Theme\":\"#FFF\",\"Arr\":[3,5,4],\"Head\":\"2\",\"Border\":\"2\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844272,
+          "Tag": 30,
+          "Key": "3348993",
+          "Type": "Canvas",
+          "Data": "{\"BgColor\":\"rgba(0,0,0,0)\",\"Cols\":\"12\",\"Type\":\"Canvas\",\"Mods\":[{\"Tag\":31,\"Col\":1,\"Row\":0}],\"Header\":\"Title\",\"Theme\":\"#052B3E\",\"Arr\":[2,8,2],\"Head\":\"2\",\"Border\":\"2\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844273,
+          "Tag": 31,
+          "Key": "3348994",
+          "Type": "Text",
+          "Data": "{\"Type\":\"Text\",\"Theme\":\"#052B3E\",\"Cols\":\"4\",\"Align\":\"left\",\"Html\":\"<h2 style=\\\"text-align: center\\\"><span style=\\\"font-family: proxima-bold, Helvetica, sans-serif; font-size: 36px\\\">Posicionamento</span></h2><h3 style=\\\"text-align: center\\\">91,4% da população* se preocupa com a saúde. Muitos desejam ou precisam guardar seus registros médicos mas não precisam ao grande volume de papeis e as vezes acabam perdendo-os. Mas como te-los de forma organizada, de fácil acesso e sem a utilização de espaço físico?</h3><h3 style=\\\"text-align: center\\\"><strong><u><span style=\\\"font-size: 30px\\\">Nosso aplicativo oferecerá a solução.&nbsp;</span></u></strong></h3><h3 style=\\\"text-align: center\\\">Diferente dos concorrentes, o MyHealthLib permite não só a inclusão dos registros pessoais, mas também de todos por quem para responsável. sem a necessidade de instalação de outras cópias.</h3><h3 style=\\\"text-align: center\\\">Oferece a entrada de dados tanto de forma automática como manual.&nbsp;&nbsp;Possui um módulo especial sobre histórico familiar que permite avaliar risco de possíveis patologias</h3><span style=\\\"font-size: 10px\\\">* Fonte: <a href=\\\"//www.acritica.net\\\">www.acritica.net</a>&nbsp; em 16/09/2020.</span>\",\"Header\":\"Edit me\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844274,
+          "Tag": 33,
+          "Key": "3348995",
+          "Type": "DonutChart",
+          "Data": "{\"Type\":\"DonutChart\",\"Head\":\"1\",\"Titlehide\":\"1\",\"Header\":\"<h2><span style=\\\"font-family: proxima-bold, Helvetica, sans-serif; font-size: 36px\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">Metas de Financiamento</font></font></span></h2><p><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\"></font></font><br></p>\",\"Cols\":\"6\",\"Title\":\"<p>Pie Chart</p>\",\"Label\":\"<h2 style=\\\"font-size: 64.5%\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">Levantando $ 100.000</font></font></h2>\",\"Theme\":\"#0c0b97\",\"Items\":[{\"Val\":\"<p><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">30% dos salários</font></font></p>\"},{\"Val\":\"<p>20% &nbsp;IT</p>\"},{\"Val\":\"<p><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">10% legal</font></font></p>\"},{\"Val\":\"<p><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">35% de marketing</font></font></p>\"},{\"Val\":\"<p><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">5% P&amp;D</font></font></p>\"}]}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844275,
+          "Tag": 34,
+          "Key": "3348996",
+          "Type": "DataCollection",
+          "Data": "{\"Type\":\"DataCollection\",\"Head\":\"2\",\"Titlehide\":\"1\",\"Header\":\"Edit me\",\"Cols\":\"12\",\"ButtonText\":\"Join Us!\",\"Message\":\"<h2><span style=\\\"color: rgb(255, 255, 255); font-family: proxima-bold, Helvetica, sans-serif\\\">This is a form field to collect emails.</span></h2><h3><span style=\\\"color: rgb(255, 255, 255)\\\">Give your readers a good reason to share their email.</span></h3>\",\"Theme\":\"#D45D77\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844276,
+          "Tag": 35,
+          "Key": "606831",
+          "Type": "Text",
+          "Data": "{\"Type\":\"Text\",\"Cols\":\"12\",\"Html\":\"<h2 style=\\\"text-align: center\\\"><span style=\\\"font-family: proxima-bold, Helvetica, sans-serif; font-size: 36px\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">Equipe Fundadora</font></font></span></h2>\",\"Align\":\"left\",\"Theme\":\"#052B3E\",\"Header\":\"Edit me\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844277,
+          "Tag": 36,
+          "Key": "606832",
+          "Type": "Images",
+          "Data": "{\"Type\":\"Images\",\"Theme\":\"#4C7BA0\",\"Items\":[{\"ID\":\"1\",\"Url\":\"//images.xtensio.com/tempimages/big/hpxc2oz9/RHw-V8TR3ki_IjVnlDaQgw.png\",\"Val\":\"100\"}],\"Cols\":\"2\",\"Align\":\"left\",\"Html\":\"Images\",\"Head\":\"2\",\"Txt\":\"2\",\"Header\":\"Edit me\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844278,
+          "Tag": 37,
+          "Key": "606833",
+          "Type": "Text",
+          "Data": "{\"Type\":\"Text\",\"Cols\":\"4\",\"Html\":\"<h2 class=\\\"fr-tag\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">Thereza Bandoli&nbsp;</font></font></h2><h4 class=\\\"fr-tag\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">Fundador e responsável&nbsp;</font></font></h4><p class=\\\"fr-tag\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">A mais de 30 anos atuando na área de TI, &nbsp;como instrutora de desenvolvimento e infraestrutura de redes. &nbsp;</font></font></p><p class=\\\"fr-tag\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">myhealthlib.comercial@gmail.com</font></font></p>\",\"Align\":\"left\",\"Theme\":\"#052B3E\",\"Header\":\"Edit me\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844279,
+          "Tag": 38,
+          "Key": "606834",
+          "Type": "Images",
+          "Data": "{\"Type\":\"Images\",\"Theme\":\"#4C7BA0\",\"Items\":[],\"Cols\":\"2\",\"Align\":\"left\",\"Html\":\"Images\",\"Head\":\"2\",\"Txt\":\"2\",\"Header\":\"Edit me\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844280,
+          "Tag": 39,
+          "Key": "606835",
+          "Type": "Text",
+          "Data": "{\"Type\":\"Text\",\"Cols\":\"12\",\"Html\":\"<h2 style=\\\"text-align: center\\\"><span style=\\\"font-family: proxima-bold, Helvetica, sans-serif; font-size: 36px\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">Equipe Fundadora</font></font></span></h2>\",\"Align\":\"left\",\"Theme\":\"#052B3E\",\"Header\":\"Edit me\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844281,
+          "Tag": 40,
+          "Key": "606841",
+          "Type": "Images",
+          "Data": "{\"Type\":\"Images\",\"Theme\":\"#4C7BA0\",\"Items\":[{\"ID\":\"1\",\"Url\":\"//images.xtensio.com/tempimages/big/hpxc2oz9/PbI3to3Op0aDZH122HtkEg.jpg\",\"Val\":\"100\"}],\"Cols\":\"2\",\"Align\":\"left\",\"Html\":\"Images\",\"Head\":\"2\",\"Txt\":\"2\",\"Header\":\"Edit me\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844282,
+          "Tag": 41,
+          "Key": "606842",
+          "Type": "Text",
+          "Data": "{\"Type\":\"Text\",\"Cols\":\"4\",\"Html\":\"<h2 class=\\\"fr-tag\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">Anderson Pacheco</font></font></h2><h4 class=\\\"fr-tag\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">CTO</font></font><br><br><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">Fundador da Ascender Ideias, atuando&nbsp; a mais de ... anos na área de TI.</font></font></h4><p class=\\\"fr-tag\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\"><a href=\\\"mailto:web@ascenderiideias.com\\\">web@ascenderiideias.com</a>.br</font></font></p>\",\"Align\":\"left\",\"Theme\":\"#052B3E\",\"Header\":\"Edit me\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844283,
+          "Tag": 42,
+          "Key": "606843",
+          "Type": "Images",
+          "Data": "{\"Type\":\"Images\",\"Theme\":\"#4C7BA0\",\"Items\":[{\"ID\":\"1\",\"Url\":\"//images.xtensio.com/tempimages/big/hpxc2oz9/FNCXQH1Ig0qt6-mcVhtVSg.png\",\"Val\":\"100\"}],\"Cols\":\"2\",\"Align\":\"left\",\"Html\":\"Images\",\"Head\":\"2\",\"Txt\":\"2\",\"Header\":\"Edit me\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844284,
+          "Tag": 43,
+          "Key": "606844",
+          "Type": "Text",
+          "Data": "{\"Type\":\"Text\",\"Cols\":\"4\",\"Html\":\"<h2 class=\\\"fr-tag\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">Catia Hubbner</font></font></h2><h4 class=\\\"fr-tag\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\"> COO</font></font></h4><p class=\\\"fr-tag\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">Profissional extremamente comprometida com os&nbsp;interesses da empresa, interessada em aprender cada vez mais,&nbsp;batalhadora e extremamente preocupada com o trabalho que&nbsp;realiza. É uma pessoa tranquila, focada esempre disposta a ajudar&nbsp;o outro.\\n</font></font></p><p class=\\\"fr-tag\\\"><br></p><p class=\\\"fr-tag\\\"><font style=\\\"vertical-align: inherit\\\"><font style=\\\"vertical-align: inherit\\\">email@domainname.com</font></font></p>\",\"Align\":\"left\",\"Theme\":\"#052B3E\",\"Header\":\"Edit me\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844285,
+          "Tag": 44,
+          "Key": "611430",
+          "Type": "Text",
+          "Data": "{\"Type\":\"Text\",\"Cols\":\"12\",\"Html\":\"<h2 style=\\\"text-align: center\\\"><span style=\\\"font-family: proxima-bold, Helvetica, sans-serif; font-size: 36px\\\">Equipe </span></h2>\",\"Align\":\"left\",\"Theme\":\"#052B3E\",\"Header\":\"Edit me\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844286,
+          "Tag": 45,
+          "Key": "615089",
+          "Type": "Text",
+          "Data": "{\"Type\":\"Text\",\"Cols\":\"12\",\"Html\":\"<h2 style=\\\"text-align: center\\\"><span style=\\\"font-family: proxima-bold, Helvetica, sans-serif; font-size: 36px\\\">Fundadoras</span></h2>\",\"Align\":\"left\",\"Theme\":\"#052B3E\",\"Header\":\"Edit me\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844287,
+          "Tag": 46,
+          "Key": "615090",
+          "Type": "Images",
+          "Data": "{\"Type\":\"Images\",\"Theme\":\"#4C7BA0\",\"Items\":[{\"ID\":\"1\",\"Url\":\"//images.xtensio.com/tempimages/big/hpxc2oz9/U8Z4L6Q88ki9dMxugHcatg.png\",\"Val\":\"100\"}],\"Cols\":\"2\",\"Align\":\"left\",\"Html\":\"Images\",\"Head\":\"2\",\"Txt\":\"2\",\"Header\":\"Edit me\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844288,
+          "Tag": 47,
+          "Key": "615091",
+          "Type": "Text",
+          "Data": "{\"Type\":\"Text\",\"Cols\":\"4\",\"Html\":\"<h2 class=\\\"fr-tag\\\">Angelina</h2><h4 class=\\\"fr-tag\\\"><br></h4><p class=\\\"fr-tag\\\">Médica</p><p class=\\\"fr-tag\\\">myhealthlib.comercial@gmail.com</p>\",\"Align\":\"left\",\"Theme\":\"#052B3E\",\"Header\":\"Edit me\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844289,
+          "Tag": 48,
+          "Key": "615092",
+          "Type": "Images",
+          "Data": "{\"Type\":\"Images\",\"Theme\":\"#4C7BA0\",\"Items\":[{\"ID\":\"1\",\"Url\":\"//images.xtensio.com/tempimages/big/hpxc2oz9/5ihHAb_R50O_ySzjc_hbbw.jpg\",\"Val\":\"100\"}],\"Cols\":\"2\",\"Align\":\"left\",\"Html\":\"Images\",\"Head\":\"2\",\"Txt\":\"2\",\"Header\":\"Edit me\"}",
+          "Store": null
+        }, {
+          "Records": [],
+          "ID": 20844290,
+          "Tag": 49,
+          "Key": "615093",
+          "Type": "Text",
+          "Data": "{\"Type\":\"Text\",\"Cols\":\"4\",\"Html\":\"<h2 class=\\\"fr-tag\\\">Aguardando</h2><h4 class=\\\"fr-tag\\\">CFO</h4><p class=\\\"fr-tag\\\">Formada em Adm /Contabilidade ou Economia</p><p class=\\\"fr-tag\\\"><br></p><p class=\\\"fr-tag\\\">email@domainname.com</p>\",\"Align\":\"left\",\"Theme\":\"#052B3E\",\"Header\":\"Edit me\"}",
+          "Store": null
+        }],
+        "UserBgImages": [],
+        "Collaborators": [{
+          "Email": "tcbandolilegg@gmail.com",
+          "FullName": "Thereza Cirstina Bandoli Legg",
+          "Privilege": 3,
+          "Accepted": true
+        }],
+        "SubmitUrl": null,
+        "Labels": ["4gh4o8s7"],
+        "Status": 0,
+        "Role": 3,
+        "UsedCount": 0,
+        "IsUserTemplate": false,
+        "IsTeamTemplate": false,
+        "BelongToATeam": true,
+        "TagStore": [3, 4, 6, 7, 10, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 26, 30, 31, 33, 34, 35, 36, 37,
+          38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49
+        ],
+        "Curl": "u029nwhj",
+        "IsCurrentUserOwner": true,
+        "UserFullName": "Thereza Cirstina Bandoli Legg",
+        "UserID": "1c3d3ab5-d7a2-400b-89b5-3f82ae2b5328",
+        "UserEmail": "tcbandolilegg@gmail.com",
+        "AwaitingCollabID": 0,
+        "HrefLang": "en"
+      };
+      $("#templates").load("/Content/templates/v-637355150216609198-all-templates-2.html", function (r, s, x) {
+        if (s == "error") {
+          setTimeout(function () {
+            location.reload();
+          }, 3000);
+        }
+        app.main(config, folio);
+      });
+    });
+  </script>
+
+
+  <script type="text/javascript">
+    window.$crisp = [];
+    window.CRISP_WEBSITE_ID = "b233c0fd-1877-4b51-ac01-29b6dafaec89";
+    CRISP_TOKEN_ID = '1c3d3ab5-d7a2-400b-89b5-3f82ae2b5328';
+    (function () {
+      d = document;
+      s = d.createElement("script");
+      s.src = "https://client.crisp.chat/l.js";
+      s.async = 1;
+      d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+    $crisp.push(["set", "user:email", "tcbandolilegg@gmail.com"]);
+    $crisp.push(["set", "user:nickname", ["Thereza Cirstina Bandoli Legg"]]);
+    $crisp.push(["set", "user:company", ["myhealthlib", {
+      url: "https://myhealthlib.xtensio.com",
+      description: "BasicAccessYearly"
+    }]]);
+  </script>
+
+
+
+  <script type="text/javascript">
+    var _cio = _cio || [];
+    (function () {
+      var a, b, c;
+      a = function (f) {
+        return function () {
+          _cio.push([f].concat(Array.prototype.slice.call(arguments, 0)))
+        }
+      };
+      b = ["load", "identify",
+        "sidentify", "track", "page"
+      ];
+      for (c = 0; c < b.length; c++) {
+        _cio[b[c]] = a(b[c])
+      };
+      var t = document.createElement('script'),
+        s = document.getElementsByTagName('script')[0];
+      t.async = true;
+      t.id = 'cio-tracker';
+      t.setAttribute('data-site-id', 'eca01fc8426b3356e154');
+      t.src = 'https://assets.customer.io/assets/track.js';
+      s.parentNode.insertBefore(t, s);
+    })();
+  </script>
+  <script type="text/javascript">
+    _cio.identify({
+      id: "1c3d3ab5-d7a2-400b-89b5-3f82ae2b5328",
+      email: "tcbandolilegg@gmail.com",
+      created_at: "1600389485",
+      name: "Thereza Cirstina Bandoli Legg",
+      x_via: "js",
+      user_hash: "da043417c4011d05dacf999a4988727313e4863029a3d4b8aae82f55c571c00c",
+      x_lastseen: "1600808844",
+      team_id: 168503,
+      team_name: "myhealthlib",
+      team_url: "myhealthlib.xtensio.com",
+      x_verified: "True",
+    });
+  </script>
+
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-45224507-4', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  <script type="text/javascript">
+    (function (i, s, o, g, r, a, m) {
+      i['ProfitWellObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m);
+    })(window, document, 'script', 'https://dna8twue3dlxq.cloudfront.net/js/profitwell.js', 'profitwell');
+    profitwell('auth_token', '164d058837032eb56edb8b9fbef26bad');
+    profitwell('user_email', 'tcbandolilegg@gmail.com');
+  </script>
+
+  <form action="/Account/LogOff" id="logoutForm" method="post"><input name="__RequestVerificationToken" type="hidden"
+      value="9MDK7imilJwcYmex6faLiyw8_pCuhwDqkZE6sBJbZVE42ufhGnKVEA_R1T2jwJFeZoGAI17iAMZJgV1bcQa9SqrVhnXJPnKO8HkzSRlJGeSob7eItI8QqEfyoqhOrCzRFoCIvw2" />
+  </form>
+  <script src="/Content/scripts/v-637355150825370855-vendor-tiff.js"></script>
+</body>
