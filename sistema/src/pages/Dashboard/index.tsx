@@ -9,6 +9,7 @@ import ProfileData from '../../components/ProfileData';
 import ModalAddTask from '../../components/ModalAddTask';
 import ModalEditTask from '../../components/ModalEditTask';
 import TaskItem from '../../components/TaskItem';
+import Dropzone from '../../components/Dropzone';
 
 import { Container, Main, LeftSide, RightSide, Tasks } from './styles';
 
@@ -33,6 +34,9 @@ const Dashboard: React.FC = () => {
   );
   const [modalOpen, setModalOpen] = useState(false);
   const [editModalOpen, setEditModalOpen] = useState(false);
+
+  // Estado para o arquivo
+  const [selectedFile, setSelectedFile] = useState<File>();
 
   useEffect(() => {
     async function loadTasks(): Promise<void> {
@@ -208,6 +212,9 @@ const Dashboard: React.FC = () => {
                 />
               </div>
             </Tasks>
+
+            {/* Chamada para o componente de upload de arquivo */}
+            <Dropzone onFileUploaded={setSelectedFile} />
           </RightSide>
         </Main>
       </Container>
