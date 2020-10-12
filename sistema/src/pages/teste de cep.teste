@@ -162,51 +162,51 @@ const HomePage: React.FC = () => {
   }, []);
   return (
     <Container>
-      <Header />
-      <AnimationContainer>
-        <Content>
-          <PageTitle>
-            <img src={logoImg} alt="Logo Your Tasks" />
-            <h1>YourTasks</h1>
-            <p>Your favorite task manager for everything!</p>
-          </PageTitle>
+    <Header />
+    < AnimationContainer >
+    <Content>
+    <PageTitle>
+    <img src= { logoImg } alt = "Logo Your Tasks" />
+      <h1>YourTasks < /h1>
+      < p > Your favorite task manager for everything! < /p>
+        < /PageTitle>
 
-          <FormContainer>
-            <Form ref={formRef} onSubmit={handleSubmit}>
-              <Input name="name" icon={FiUser} placeholder="Nome Completo" />
-              <Input name="email" icon={FiMail} placeholder="E-mail" />
-              <Input
+        < FormContainer >
+        <Form ref= { formRef } onSubmit = { handleSubmit } >
+        <Input name= "name" icon = { FiUser } placeholder = "Nome Completo" />
+          <Input name="email" icon = { FiMail } placeholder = "E-mail" />
+            <Input
                 name="birth"
-                type="date"
-                icon={FiSun}
-                placeholder="Data de Nascimento"
-              />
-              <Input name="cpf" icon={FiUserCheck} placeholder="CPF" />
-              <Input
+  type = "date"
+  icon = { FiSun }
+  placeholder = "Data de Nascimento"
+    />
+    <Input name="cpf" icon = { FiUserCheck } placeholder = "CPF" />
+      <Input
                 name="cep"
-                icon={FiMap}
-                placeholder="CEP"
-                onBlur={searchAddress}
-              />
-              <Input
+  icon = { FiMap }
+  placeholder = "CEP"
+  onBlur = { searchAddress }
+    />
+    <Input
                 name="address"
-                defaultValue={address}
-                icon={FiMapPin}
-                placeholder="Endereço"
-              />
-              <Input name="number" icon={FiMapPin} placeholder="Número" />
-              <Input
+  defaultValue = { address }
+  icon = { FiMapPin }
+  placeholder = "Endereço"
+    />
+    <Input name="number" icon = { FiMapPin } placeholder = "Número" />
+      <Input
                 name="password"
-                type="password"
-                icon={FiLock}
-                placeholder="Senha"
-              />
-              <Button type="submit">Sign up for YourTasks</Button>
-            </Form>
-          </FormContainer>
-        </Content>
-      </AnimationContainer>
-    </Container>
+  type = "password"
+  icon = { FiLock }
+  placeholder = "Senha"
+    />
+    <Button type="submit" > Sign up for YourTasks < /Button>
+      < /Form>
+      < /FormContainer>
+      < /Content>
+      < /AnimationContainer>
+      < /Container>
   );
 };
 

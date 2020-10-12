@@ -1,75 +1,96 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 0;
+  --horizontalPadding: 16px;
+  --verticalPadding: 24px;
+
+  padding: var(--verticalPadding) var(--horizontalPadding);
+  overflow: hidden;
+`;
+
+export const Main = styled.div`
   display: flex;
-  align-items: center;
   flex-direction: column;
-  flex: 1;
+
+  margin: 0 auto;
+  max-width: 1280px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
-export const Title = styled.h1`
-  font-size: 48px;
-  color: blue;
+export const LeftSide = styled.div`
+  padding: 0 var(--horizontalPadding);
+
+  @media (min-width: 768px) {
+    width: 25%;
+  }
 `;
 
-export const TableContainer = styled.section`
-  margin-top: 35px;
+export const RightSide = styled.div`
+  padding: 0 var(--horizontalPadding);
 
-  table {
-    width: 100%;
-    th {
-      color: blue;
+  @media (min-width: 768px) {
+    width: 75%;
+  }
+`;
+
+export const Tasks = styled.div`
+  margin-top: var(--verticalPadding);
+
+  > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+
+    > h1 {
+      font-size: 32px;
       font-weight: normal;
-      padding: 20px 32px;
-      font-size: 20px;
-      line-height: 2px;
-      text-align: left;
+
+      > span {
+        font-weight: 900;
+        color: #f3ab2a;
+      }
     }
 
-    td {
-      padding: 20px 32px;
+    > button {
+      font-weight: 600;
+      border-radius: 8px;
       border: 0;
-      background: #fff;
-      font-size: 16px;
-      font-weight: normal;
-      color: #969cb3;
-      text-align: center;
+      background: #d5922a;
+      color: #fff;
 
-      &.title {
-        color: #363f5f;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .text {
+        padding: 16px 24px;
       }
 
-      a {
-        font-size: 24px;
-        color: #f27a54;
-      }
-
-      button {
-        background: none;
-        border: none;
-
-        svg {
-          font-size: 24px;
-          color: #f27a54;
-          transition: color 0.2s;
-        }
-
-        &:hover svg {
-          color: #c53030;
-        }
+      .icon {
+        display: flex;
+        padding: 16px 16px;
+        background: #f3ab2a;
+        border-radius: 0 8px 8px 0;
+        margin: 0 auto;
       }
     }
+  }
 
-    td:first-child {
-      border-radius: 8px 0 0 8px;
-    }
+  > div {
+    margin-top: 8px;
 
-    td:last-child {
-      border-radius: 0 8px 8px 0;
+    display: grid;
+    grid-gap: 16px;
+
+    grid-template-columns: 1fr;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: minmax(min-content, max-content);
     }
   }
 `;

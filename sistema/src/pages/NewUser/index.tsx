@@ -4,12 +4,12 @@ import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 import InputMask from 'react-input-mask';
-import api from '../../services/api';
+// import api from '../../services/api';
 import getValidationErrors from '../../utils/getValidationErrors';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
-import Header from '../../components/Header';
+// import Header from '../../components/Header';
 
 import { Container, Title } from './styles';
 // import { AxiosInterceptorManager } from 'axios';
