@@ -46,7 +46,6 @@ header nav a {
   align-self: center;
 }
 
-
 nav {
   background-color: #03145f;
 }
@@ -148,7 +147,13 @@ header nav a:hover {
 }
 
 .carrossel-equipes {
-  margin-top: 5px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+#carrosselEquipe {
+  margin-top: 45px;
+  margin-bottom: 45px;
 }
 
 .footer {
@@ -160,11 +165,8 @@ header nav a:hover {
   font-style: italic;
 }
 
-
-
 #menuDeslizante a {
   color: solid hsla(214, 93%, 12%, 0.5);
-
 }
 
 #menuDeslizante {
@@ -306,7 +308,6 @@ h4 {
   align-items: start;
 }
 
-
 .container-fluid #quemSomos {
   padding: 20px;
   background: url('../images/quemSomos.png') no-repeat;
@@ -340,7 +341,6 @@ h4 {
 
 .container-fluid #posicionamento h2,
 p {
-
   text-align: center;
 }
 
@@ -368,7 +368,6 @@ p {
   } */
 
 .container-fluid #parcerias {
-
   height: 600px;
   background-size: contain;
   background-size: cover;

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyHealthLink</title>
+  <link rel="stylesheet" href="./frontEnd/css/reset.css" />
+  <link rel="stylesheet" href="./frontEnd/css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="./frontEnd/css/bootstrap/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="./frontEnd/css/bootstrap/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="./frontEnd/css/owl/owl.carousel.min.css">
+  <link rel="stylesheet" href="./frontEnd/css/owl/owl.theme.default.min.css">
+  <link rel="stylesheet" href="./frontEnd/css/style.css">
+
+
+</head>
+
+<body>
+  <section>
+    <!-- Menu deslizante ******************************* -->
+    <ul id="menuDeslizante">
+      <li><a href="#paginaPrincipal"><i class="fas fa-home"></i></a></li>
+      <li><a href="#quemSomos"><i class="fas fa-address-card"></i></a></li>
+      <li><a href="#cultura"><i class="fas fa-business-time"></i></a></li>
+      <li><a href="#posicionamento"><i class="fas fa-crosshairs"></i></a></li>
+      <li><a href="#roadMap"><i class="fas fa-hiking"></i></a></li>
+      <li><a href="#parcerias"><i class="fas fa-handshake"></i></a></li>
+      <li><a href="./frontEnd/html/blog.html"><i class="fab fa-blogger"></i></a></li>
+      <li><a href="#equipe"><i class="fas fa-users"></i></a></li>
+    </ul>
+  </section>
+
+  <!-- menu topo da pagina -->
+
+
+  <header id="cabealho" class="header">
+    <div class="container-fluid">
+      <nav class="navbar">
+        <div>
+          <h2 class="logo">MyHealthLink</h2>
+        </div>
+        <div>
+          <a href="#quemSomos">Quem somos</a>
+        </div>
+        <div>
+          <a href="#cultura">Cultura</a>
+        </div>
+        <div>
+          <a href="#posicionamento">Posicionamento</a>
+        </div>
+        <div>
+          <a href="#roadMap">Rodmap</a>
+        </div>
+        <div>
+          <a href="#parcerias">Parcerias</a>
+        </div>
+        <div>
+          <a href="./frontEnd/html/blog.html">Blog</a>
+        </div>
+        <div>
+          <a href="#equipe">Equipe</a>
+        </div>
+        <div>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+        <div>
+          <a href="./frontEnd/html/login.html" target="_blank"><i class="fas fa-key"></i>
+            Login</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div id="paginaPrincipal">
+      <div class="fundoTela">
+        <div class="container">
+          <h3 class=" titulo">MyHealthLink</h3>
+          <p class="descricao">
+            É uma plataforma, e futuramente um app, que permite armazenar os históricos médicos, exames, registros de
+            doenças hereditárias, genéticas ou congênitas, alergias medicamentosas ou alimentares, marcações de
+            consultas
+            e controle de vacinas, para serem administrados e acompanhados de forma simples. Sendo a melhor maneira de
+            monitorar todos os eventos relacionados a saúde.
+          </p>
+          <div class="botoes">
+            <button role="button" class="botao" onclick="rodaVideo()">
+              <a href="./frontEnd/html/falaDaFundadora.html" target="_blank">
+                <i class="fas fa-play"></i> FALA DA FUNDADORA
+              </a>
+            </button>
+
+            <button role="button" class="botao" target="_blank" onclick="maisInformações()">
+              <a href="./frontEnd/html/maisInformacoes.html" target="_blank">
+                <i class="fas fa-info-circle"></i>
+                MAIS INFORMAÇÕES
+            </button>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div id="redesSociais">
+            <div class="icones">
+              <a href="https://business.facebook.com/myhealthlib/" target="_blank">
+                <img src="./frontEnd/images/logos/facebook.png" height="50px" width="50px" alt="">
+              </a>
+            </div>
+
+            <div class="icones">
+              <a href="https://www.instagram.com/myhealthlib/" target="_blank">
+                <img src="./frontEnd/images/logos/instagram.png" height="50px" width="50px" alt="">
+              </a>
+            </div>
+
+            <div class="icones">
+              <a href="https://www.linkedin.com/company/myhealthlib/" target="_blank">
+                <img src="./frontEnd/images/logos/linkedin.png" height="50px" width="50px" alt="">
+              </a>
+            </div>
+
+            <div class="icones">
+              <a href="https://www.youtube.com/channel/UCfbzvYNtlvFh1zwUF1LKFJg\" target="_blank">
+                <img src="./frontEnd/images/logos/youtube.png" height="50px" width="50px" alt="">
+              </a>
+            </div>
+
+            <div class="icones">
+              <a href=" https://@myhealthlib\" target="_blank">
+                <img src="./frontEnd/images/logos/twitter.png" height="50px" width="50px" alt="" />
+              </a>
+            </div>
+
+            <div class="icones">
+              <a href="https://br.pinterest.com/myhealthlib\" target="_blank">
+                <img src="./frontEnd/images/logos/pinterest.png" height="50px" width="50px" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!--  ******************Quem somos ********************  -->
+
+  <main>
+
+    <div class="fundoCorpo">
+      <div class="container-fluid">
+        <div id="quemSomos">
+          <h2>
+            Como surgiu
+          </h2>
+          <h3>
+            A plataforma se originou a partir da ideia de manter todo o histórico médico em um único lugar. Tivemos
+            como
+            base dois graves problemas familiar que nos fez perceber a necessidade e importância de ter todas as
+            informações em mãos de forma ágil e rápida. Vimos que a quantidade de papeis, mesmo organizados em pastas,
+            crescia de forma exagerada o que dificultava a busca por informações. Quanto maior o problema de saúde
+            mais
+            exames clínicos, mais exames de imagem, mais consultas e por fim mais papeis a serem guardados. Nós temos
+            a
+            solução.
+          </h3>
+          <a href="./frontEnd/html/quemSomos.html">
+            <p> </p>
+            <p> </p>
+            <h2>Conheça toda a história</h2>
+          </a>
+
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <main>
+    <div class="fundoCorpo">
+      <div class="container-fluid ">
+        <div id="cultura">
+          <ul>
+
+          </ul>
+          <ul>
+            <li>
+              <img class="itens_cultura" src="./frontEnd/images/preocpacao.png" alt="">
+            </li>
+            <li>
+              <img class="itens_cultura" src="./frontEnd/images/excelencia.png" alt="">
+            </li>
+            <li>
+              <img class="itens_cultura" src="./frontEnd/images/sustentabilidade.png" alt="">
+            </li>
+            <li>
+              <img class="itens_cultura" src="./frontEnd/images/parceiros.png" alt="">
+            </li>
+            <li>
+              <img class="itens_cultura" src="./frontEnd/images/colaborativos.png" alt="">
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <div class="desc_cultura">
+                <p class="texto_cultura">
+                  Foco em pessoas
+                </p>
+                <p class="texto_cultura">
+                  Atenção nos feedbakcs de usuários
+                </p>
+                <p>
+                  Melhorias constantes
+                </p>
+              </div>
+            </li>
+
+
+            <li>
+              <div class="desc_cultura">
+                <p class="texto_cultura">
+                  Busca da excelência
+                </p>
+                <p class="texto_cultura">
+                  Através de tecnologias asistivas
+                </p>
+                <p>
+                  Integração com IA e machine learnig
+                </p>
+              </div>
+            </li>
+
+
+            <li>
+              <div class="desc_cultura">
+                <p class="texto_cultura">
+                  Somos sustentaveis
+                </p>
+                <p class="texto_cultura">
+                  Empresa Lixo Zero
+                </p>
+                <p>
+                  Apoio a movimentos Socio-ambientais
+                </p>
+              </div>
+            </li>
+
+
+            <li>
+              <div class="desc_cultura">
+                <p class="texto_cultura">
+                  Valorizamos as parcerias
+                </p>
+                <p class="texto_cultura">
+                  Escuta ativa
+                </p>
+                <p>
+                  promoção multipla
+                </p>
+              </div>
+            </li>
+
+
+            <li>
+              <div class="desc_cultura">
+                <p class="texto_cultura">
+                  Somos Colaborativos
+                </p>
+                <p class="texto_cultura">
+                  Valorizamos a equipe
+                </p>
+                <p>
+                  investimos em capacitação continuada
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    </div>
+  </main>
+
+  <!--  ******************Quem somos ********************  -->
+
+
+
+
+  <main>
+    <div class="fundoCorpo">
+      <div class="container-fluid">
+        <div id="posicionamento">
+          <h2>Posicionamento</h2>
+          <h3>91,4% da população* se preocupa com a saúde.</h3>
+          <p>(*Fonte: www.acritica.net  em 16/09/2020.)</p>
+          <h4>
+            Muitos desejam ou precisam guardar seus registros médicos mas não
+            o fazem devido ao grande volume de papeis. Muita coisa acaba por
+            se perder. Mas como tê-los de forma organizada, de fácil acesso e
+            sem a utilização de espaço físico?
+          </h4>
+
+          <p></p>
+
+          <h2>Nosso aplicativo oferecerá a solução.</h2>
+          <h4>
+            Diferente dos concorrentes, o MyHealthLib permite não só a
+            inclusão dos registros pessoais, mas também de todos por quem para
+            responsável. sem a necessidade de instalação de outras cópias.
+            Oferece a entrada de dados tanto de forma automática como manual.
+            Possui um módulo especial sobre histórico familiar que permite
+            avaliar risco de possíveis patologias
+          </h4>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <div>
+    <!-- *************************  parcerias ******************** -->
+  </div>
+  <div class="container-fluid">
+    <div id="roadMap">
+
+    </div>
+
+  </div>
+  <!-- *************************  parcerias ******************** -->
+  <div class="container-fluid">
+    <div id="parcerias">
+      <h2>
+        Nossos parceiros
+      </h2>
+      <div>
+        <a class="icones" href="https://www.ascenderideias.com.br" target="_blank">
+          <img src="./frontEnd/images/logos/ascender.png" height="120px" alt="">
+        </a>
+        <a class=" icones" href="https://ilzb.org/" target="_blank">
+          <img src="./frontEnd/images/logos/LixoZero.png" height="240px" width="240px" alt="">
+        </a>
+        <a class="icones" href="https://www.instagram.com/vo.contigo/" target="_blank">
+          <img src="./frontEnd/images/logos/vo_contigo.png" height="120px" " alt="">
+        </a>
+      </div>
+      <p> </p>
+      <h2>
+        Nossa aceleradora
+      </h2>
+      <div class=" icones">
+          <a href="https://www.b2mamy.com.br">
+            <img src="./frontEnd/images/logos/b2mamy.png" height="120px" alt="">
+          </a>
+      </div>
+    </div>
+
+    <!-- *****************div de carrossel equipe -->
+    <div id="equipe" class="carrossel-equipe">
+      <div class="owl-carousel owl-theme">
+        <div class="item">
+
+          <img class="box-equipe" src="./frontEnd/images/img_equipe/thereza.png" alt="">
+        </div>
+        <div class="item">
+
+          <img class="box-equipe" src="./frontEnd/images/img_equipe/carol.jpg" alt="">
+        </div>
+        <div class="item">
+
+          <img class="box-equipe" src="./frontEnd/images/img_equipe/anderson.jpg" alt="">
+        </div>
+        <div class="item">
+
+          <img class="box-equipe" src="./frontEnd/images/img_equipe/angelina.png" alt="">
+        </div>
+        <div class="item">
+
+          <img class="box-equipe" src="./frontEnd/images/img_equipe/catia2.png">
+          <!-- ./images/img_equipe/catia2.png" alt=""> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- icones ******** -->
+    <!-- <script src="https://kit.fontawesome.com/35fd68d39c.js" crossorigin="anonymous"></script> -->
+    <script src="./frontEnd/js/fontawesome/35fd68d39c.js" crossorigin="anonymous"></script>
+
+    <!-- **** arquivos do owl -->
+    <script src="./frontEnd/js/owl/jquery.min.js"></script>
+    <script src="./frontEnd/js/owl/owl.carousel.min.js"></script>
+    <script src="./frontEnd/js/owl/setupCarrossel.js"></script>
+
+    <!-- minhas torinas -->
+    <Script src="./frontEnd/js/rotinas.js"></Script>
+    <!-- <Script src="../js/rotinas.js"></Script> -->
+
+    <footer class="footer">
+      Desenvolvido por Thereza Cristina Bandoli Legg versão 0.2 Mockup - 23h30 - 11/10/2020</footer>
+</body>
+
+
+</html>
