@@ -38,7 +38,7 @@ const Dropzone: React.FC<Props> = ({ onFileUploaded }) => {
       ) : (
         <p>
           <FiUpload />
-          Arraste e solte a imagem do estabelecimento aqui
+          Arraste e solte a imagem do exame aqui
         </p>
       )}
     </div>

@@ -1,9 +1,17 @@
-import React, { useCallback, useRef } from 'react';
+import React, {
+  useCallback,
+  useRef,
+  useEffect,
+  useState,
+  ChangeEvent,
+} from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
+import axios from 'axios';
 import InputMask from 'react-input-mask';
+
 // import api from '../../services/api';
 import getValidationErrors from '../../utils/getValidationErrors';
 
@@ -27,10 +35,66 @@ interface FormData {
   codCidade: number;
 }
 
+interface IBGEUfResponse {
+  sigla: string;
+}
+
+interface IBGECityResponse {
+  nome: string;
+}
+
 const NewUser: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
+  const [ufs, setUfs] = useState<string[]>([]);
+  const [cities, setCities] = useState<string[]>([]);
+  const [selectedUf, setSelectedUf] = useState('0');
+  const [selectedCity, setSelectedCity] = useState('0');
 
   const history = useHistory();
+
+  useEffect(() => {
+    axios
+      .get<IBGEUfResponse[]>(
+        'https://servicodados.ibge.gov.br/api/v1/localidades/estados',
+      )
+      .then(res => {
+        const ufInitials = res.data.map(uf => uf.sigla);
+
+        setUfs(ufInitials);
+      });
+  }, []);
+
+  useEffect(() => {
+    if (selectedUf === '0') {
+      return;
+    }
+    // Carregar as cidades toda cez que a uf mudar
+    axios
+      .get<IBGECityResponse[]>(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${selectedUf}/municipios`,
+      )
+      .then(res => {
+        const cityNames = res.data.map(uf => uf.nome);
+
+        setCities(cityNames);
+      });
+  }, [selectedUf]);
+
+  const handleSelectUf = useCallback(
+    (event: ChangeEvent<HTMLSelectElement>) => {
+      const uf = event.target.value;
+      setSelectedUf(uf);
+    },
+    [],
+  );
+
+  const handleSelectCity = useCallback(
+    (event: ChangeEvent<HTMLSelectElement>) => {
+      const city = event.target.value;
+      setSelectedCity(city);
+    },
+    [],
+  );
 
   const handleSubmit = useCallback(
     async (data: FormData) => {
@@ -91,8 +155,45 @@ const NewUser: React.FC = () => {
               <Input name="dataNascimento" placeholder="Data de nascimento" />
             )}
           </InputMask>
-          <Input name="codEstado" placeholder="Estado" />
-          <Input name="codCidade" placeholder="cidade" />
+          {/* <Input name="codEstado" placeholder="Estado" /> */}
+          {/* <Input name="codCidade" placeholder="cidade" /> */}
+
+          <div className="field-group">
+            <div className="field">
+              <label htmlFor="uf">Estado (UF)</label>
+              <select
+                name="uf"
+                id="uf"
+                value={selectedUf}
+                onChange={handleSelectUf}
+              >
+                <option value="0">Selecione um UF</option>
+                {ufs.map(uf => (
+                  <option value={uf} key={uf}>
+                    {uf}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="field">
+              <label htmlFor="city">City</label>
+              <select
+                name="city"
+                id="city"
+                value={selectedCity}
+                onChange={handleSelectCity}
+              >
+                <option value="0">Selecione uma cidade</option>
+                {cities.map(city => (
+                  <option value={city} key={city}>
+                    {city}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+
           <Input
             name="tipoLogradouro"
             placeholder="Rua, Avenida, Beco, Alameda, etc"

@@ -17,8 +17,8 @@ const Route: React.FC<ReactProps> = ({
   component: Component,
   ...rest
 }) => {
-  // const { nome } = useAuth();
-  const nome = true;
+  const { nome } = useAuth();
+  // const nome = true;
 
   return (
     <ReactDOMRoute
