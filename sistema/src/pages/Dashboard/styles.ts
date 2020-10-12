@@ -13,20 +13,21 @@ export const Container = styled.div`
 
 export const Title = styled.h1`
   font-size: 48px;
-  color: #f27a54;
+  color: blue;
 `;
 
 export const TableContainer = styled.section`
-  margin-top: 64px;
+  margin-top: 35px;
 
   table {
     width: 100%;
     th {
-      color: #f27a54;
+      color: blue;
       font-weight: normal;
       padding: 20px 32px;
-      font-size: 24px;
-      line-height: 24px;
+      font-size: 20px;
+      line-height: 2px;
+      text-align: left;
     }
 
     td {

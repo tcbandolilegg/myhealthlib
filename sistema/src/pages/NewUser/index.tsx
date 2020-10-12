@@ -77,7 +77,7 @@ const NewUser: React.FC = () => {
   );
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Container>
         <Title>Novo usuário</Title>
         <Form ref={formRef} onSubmit={handleSubmit}>
@@ -88,11 +88,7 @@ const NewUser: React.FC = () => {
 
           <InputMask mask="99/99/9999">
             {() => (
-              <Input
-                name="dataNascimento"
-                required
-                placeholder="Data de nascimento"
-              />
+              <Input name="dataNascimento" placeholder="Data de nascimento" />
             )}
           </InputMask>
           <Input name="codEstado" placeholder="Estado" />

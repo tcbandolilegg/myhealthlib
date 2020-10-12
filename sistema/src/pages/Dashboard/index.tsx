@@ -49,28 +49,57 @@ const Dashboard: React.FC = () => {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Container>
         <Title>Dados Cadastrados</Title>
 
         <TableContainer>
           <table>
+            <img src="myhealthlib.png" alt="" />
             <thead>
               <tr>
                 <th>ID</th>
+              </tr>
+              <tr>
                 <th>CPF:</th>
+              </tr>
+              <tr>
                 <th>Nome:</th>
+              </tr>
+              <tr>
                 <th>Data nascimento</th>
+              </tr>
+              <tr>
                 <th>Endereço</th>
+              </tr>
+              <tr>
                 <th>Bairro</th>
+              </tr>
+              <tr>
                 <th>Cidade</th>
+              </tr>
+              <tr>
                 <th>Estado</th>
-
+              </tr>
+              <p></p>
+              <p></p>
+              <tr>
                 <th>Dependente 1</th>
+
                 <th>Dependente 2</th>
+
                 <th>Dependente 3</th>
+
                 <th>Dependente 4</th>
+
                 <th>Dependente 5</th>
+              </tr>
+              <tr>
+                <td> dd</td>
+                <td> dd</td>
+                <td> dd</td>
+                <td> dd</td>
+                <td> dd</td>
               </tr>
             </thead>
             <tbody>
