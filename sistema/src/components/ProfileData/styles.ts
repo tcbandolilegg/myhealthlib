@@ -18,15 +18,15 @@ export const Flex = styled.div`
     margin-left: 24px;
 
     > h1 {
-      font-size: 26px;
+      font-size: 24px;
       line-height: 1.25;
-      color: #c3c3c3;
+      color: #103096;
       font-weight: 600;
     }
 
     > h2 {
-      font-size: 20px;
-      color: #c9c9c9;
+      font-size: 16px;
+      color: #103096;
       font-weight: 300;
     }
   }
@@ -43,12 +43,19 @@ export const Flex = styled.div`
 `;
 
 export const Avatar = styled.img`
-  width: 16%;
+  // width: 16%;
+  height: 120px;
   border-radius: 50%;
+  border: solid 25%;
+  padding: 10px;
 
   @media (min-width: 768px) {
     width: 75%;
     margin-top: 36px;
+  }
+
+  img {
+    // heigth: 40px;
   }
 `;
 

@@ -15,7 +15,7 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
-  body, input, button {
+  body, input, button, select{
     font-family: 'Zilla Slab', serif;
     font-size: 16px;
   }
@@ -27,4 +27,12 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
   }
+
+#users{
+  background: #bfd8c2;
+}
+
+#users {
+  color: #2a57a0;
+}
 `;

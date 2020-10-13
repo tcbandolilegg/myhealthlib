@@ -4,7 +4,7 @@ import { FiCheckSquare } from 'react-icons/fi';
 
 import { useToast } from '../../hooks/toast';
 
-import Header from '../../components/Header';
+// import Header from '../../components/Header';
 import ProfileData from '../../components/ProfileData';
 import ModalAddTask from '../../components/ModalAddTask';
 import ModalEditTask from '../../components/ModalEditTask';
@@ -164,9 +164,12 @@ const Dashboard: React.FC = () => {
           <LeftSide>
             <ProfileData
               avatarUrl={logoImg}
-              name="Anderson Pacheco"
-              email="anderson@ascenderideias.com.br"
-              birth="16/05/1994"
+              name="Thereza Cristina"
+              email="tcbandolilegg@gmail.com"
+              birth="23/03/1966"
+              // name="Anderson Pacheco"
+              // email="anderson@ascenderideias.com.br"
+              // birth="16/05/1994"
             />
           </LeftSide>
 
@@ -188,14 +191,38 @@ const Dashboard: React.FC = () => {
                 <h1>
                   <span>{taskQuantity}</span> Consultas cadastradas
                 </h1>
-
-                <button type="submit" onClick={toggleModal}>
-                  <p className="text">Nova consulta</p>
-                  <div className="icon">
-                    <FiCheckSquare size={24} />
-                  </div>
-                </button>
               </header>
+              <div>
+                <div>
+                  <TaskItem
+                    task={tasks[1]}
+                    handleEditTask={handleEditTask}
+                    handleDeleteTask={handleDeleteTask}
+                  />
+                </div>
+                <div className="botoes">
+                  <button type="submit" onClick={toggleModal}>
+                    <p className="text">Nova consulta</p>
+                    <div className="icon">
+                      <FiCheckSquare size={24} />
+                    </div>
+                  </button>
+
+                  <button type="submit" onClick={toggleModal}>
+                    <p className="text">Nova exame</p>
+                    <div className="icon">
+                      <FiCheckSquare size={24} />
+                    </div>
+                  </button>
+
+                  <button type="submit" onClick={toggleModal}>
+                    <p className="text">Nova receita</p>
+                    <div className="icon">
+                      <FiCheckSquare size={24} />
+                    </div>
+                  </button>
+                </div>
+              </div>
 
               <div>
                 {/* {tasks &&
@@ -207,11 +234,6 @@ const Dashboard: React.FC = () => {
                       handleDeleteTask={handleDeleteTask}
                     />
                   ))} */}
-                <TaskItem
-                  task={tasks[1]}
-                  handleEditTask={handleEditTask}
-                  handleDeleteTask={handleDeleteTask}
-                />
               </div>
             </Tasks>
 

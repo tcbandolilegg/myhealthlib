@@ -17,39 +17,33 @@ import LogoImg from '../../assets/myhealthlib.png';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
-interface LogInFormData {
-  login: string;
-  senha: string;
+interface ForgotPasswordFormData {
+  email: string;
 }
 
-const LogIn: React.FC = () => {
+const ForgotPassword: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
-  const { logIn } = useAuth();
+  // const { forgotPassword } = useAuth();
   const { addToast } = useToast();
   const history = useHistory();
 
   const handleSubmit = useCallback(
-    async (data: LogInFormData) => {
-      // if (login == 'bandoli') {
-      //   history.push('dashboard');
-      // } else {
+    async (data: ForgotPasswordFormData) => {
       try {
         formRef.current?.setErrors({});
 
         const schema = Yup.object().shape({
-          login: Yup.string().required('Usuário obrigatório'),
-          senha: Yup.string().required('Senha obrigatória'),
+          email: Yup.string().required('E-mail obrigatório'),
         });
 
         await schema.validate(data, {
           abortEarly: false,
         });
 
-        await logIn({
-          login: data.login,
-          senha: data.senha,
-        });
+        // await forgotPassword({
+        //   email: data.email,
+        // });
 
         history.push('dashboard');
       } catch (err) {
@@ -62,12 +56,13 @@ const LogIn: React.FC = () => {
         addToast({
           type: 'error',
           title: 'Erro na autenticação',
-          description: 'Ocorreu um erro ao fazer login, cheque as credenciais.',
+          description:
+            'Ocorreu um erro ao fazer forgotPassword, cheque as credenciais.',
         });
-        // }
       }
     },
-    [logIn, addToast, history],
+    // [forgotPassword, addToast, history],
+    [addToast, history],
   );
 
   return (
@@ -75,31 +70,22 @@ const LogIn: React.FC = () => {
       <Container>
         <Content>
           <AnimationContainer>
-            <a href="https://tcbandolilegg.github.io/myhealthlib">
-              {/* <img src="../../assets/myhealthlib.png" alt="MyHealthLib" /> */}
-              <img src={LogoImg} alt="MyHelathLib" />
-            </a>
+            {/* <img src="../../assets/myhealthlib.png" alt="MyHealthLib" /> */}
+            <img src={LogoImg} alt="MyHelathLib" />
 
             <Form ref={formRef} onSubmit={handleSubmit}>
-              <h1>Faça seu login</h1>
-
-              <Input name="login" icon={FiUser} placeholder="Usuário" />
+              <h1>Digite o e-mail cadastrado</h1>
 
               <Input
-                type="password"
-                name="senha"
-                icon={FiLock}
-                placeholder="Senha"
+                type="email"
+                name="email"
+                icon={FiUser}
+                placeholder="E-mail cadastrado"
               />
-              <Button type="submit">Entrar</Button>
-              <Link id="linkUser" to="/forgotPassword">
-                Esqueci minha senha
-              </Link>
+              <a href="mailto:myhealthlib.comercial@gmail.com? Subject: Senha perdida&body=Solicito o reenvio da minha password">
+                <Button type="submit">Recuperar senha</Button>
+              </a>
             </Form>
-            <Link to="/newUser">
-              <FiLogIn />
-              Ainda não tenho cadastro
-            </Link>
           </AnimationContainer>
         </Content>
       </Container>
@@ -107,4 +93,4 @@ const LogIn: React.FC = () => {
   );
 };
 
-export default LogIn;
+export default ForgotPassword;

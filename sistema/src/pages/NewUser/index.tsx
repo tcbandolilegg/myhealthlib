@@ -142,73 +142,77 @@ const NewUser: React.FC = () => {
   return (
     <>
       {/* <Header /> */}
-      <Container>
-        <Title>Novo usuário</Title>
-        <Form ref={formRef} onSubmit={handleSubmit}>
-          <InputMask mask="999.999.999-99">
-            {() => <Input name="cpf" placeholder="CPF somente numeros" />}
-          </InputMask>
-          <Input name="nome" placeholder="Nome" />
+      <div id="users">
+        <Container>
+          <Title>Novo usuário</Title>
+          <Form ref={formRef} onSubmit={handleSubmit}>
+            <InputMask mask="999.999.999-99">
+              {() => <Input name="cpf" placeholder="CPF somente numeros" />}
+            </InputMask>
+            <Input name="nome" placeholder="Nome" />
 
-          <InputMask mask="99/99/9999">
-            {() => (
-              <Input name="dataNascimento" placeholder="Data de nascimento" />
-            )}
-          </InputMask>
-          {/* <Input name="codEstado" placeholder="Estado" /> */}
-          {/* <Input name="codCidade" placeholder="cidade" /> */}
+            <InputMask mask="99/99/9999">
+              {() => (
+                <Input name="dataNascimento" placeholder="Data de nascimento" />
+              )}
+            </InputMask>
+            {/* <Input name="codEstado" placeholder="Estado" /> */}
+            {/* <Input name="codCidade" placeholder="cidade" /> */}
 
-          <div className="field-group">
-            <div className="field">
-              <label htmlFor="uf">Estado (UF)</label>
-              <select
-                name="uf"
-                id="uf"
-                value={selectedUf}
-                onChange={handleSelectUf}
-              >
-                <option value="0">Selecione um UF</option>
-                {ufs.map(uf => (
-                  <option value={uf} key={uf}>
-                    {uf}
-                  </option>
-                ))}
-              </select>
+            <div className="field-group">
+              <div className="field">
+                {/* <label htmlFor="uf">Estado (UF)</label> */}
+                <select
+                  name="uf"
+                  id="uf"
+                  value={selectedUf}
+                  onChange={handleSelectUf}
+                >
+                  <option value="0">Selecione um UF</option>
+                  {ufs.map(uf => (
+                    <option value={uf} key={uf}>
+                      {uf}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="field">
+                {/* <label htmlFor="city">City</label> */}
+                <select
+                  name="city"
+                  id="city"
+                  value={selectedCity}
+                  onChange={handleSelectCity}
+                >
+                  <option value="0">Selecione uma cidade</option>
+                  {cities.map(city => (
+                    <option value={city} key={city}>
+                      {city}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
 
-            <div className="field">
-              <label htmlFor="city">City</label>
-              <select
-                name="city"
-                id="city"
-                value={selectedCity}
-                onChange={handleSelectCity}
-              >
-                <option value="0">Selecione uma cidade</option>
-                {cities.map(city => (
-                  <option value={city} key={city}>
-                    {city}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
+            <Input
+              name="tipoLogradouro"
+              placeholder="Rua, Avenida, Beco, Alameda, etc"
+            />
+            <Input name="enderecoLogradouro" placeholder="Nome do logradouro" />
+            <Input name="enderecoNumero" placeholder="Número do logradouro" />
+            <Input name="enderecoComplemento" placeholder="Complemento" />
+            <Input name="enderecoBairro" placeholder="Bairro" />
+            <Input name="codEstado" placeholder="Estado" />
+            <Input name="codCidade" placeholder="Cidade" />
 
-          <Input
-            name="tipoLogradouro"
-            placeholder="Rua, Avenida, Beco, Alameda, etc"
-          />
-          <Input name="enderecoLogradouro" placeholder="Nome do logradouro" />
-          <Input name="enderecoNumero" placeholder="Número do logradouro" />
-          <Input name="enderecoComplemento" placeholder="Complemento" />
-          <Input name="enderecoBairro" placeholder="Bairro" />
-          <Input name="codEstado" placeholder="Estado" />
-          <Input name="codCidade" placeholder="Cidade" />
+            <Button type="submit">Salvar</Button>
 
-          <Button type="submit">Salvar</Button>
-          <Link to="/dashboard">Cancelar</Link>
-        </Form>
-      </Container>
+            {/* Não entendi.........  se cancelar não deveria voltar praa a tela de login??? */}
+            <Link to="/dashboard">Cancelar</Link>
+          </Form>
+        </Container>
+      </div>
     </>
   );
 };

@@ -8,6 +8,7 @@ import Dashboard from '../pages/Dashboard';
 import EditUser from '../pages/EditUser';
 
 import NewUser from '../pages/NewUser';
+import ForgotPassword from '../pages/ForgotPassword';
 
 const Routes: React.FC = () => (
   <Switch>
@@ -15,6 +16,7 @@ const Routes: React.FC = () => (
     <Route path="/dashboard" component={Dashboard} isPrivate />
     <Route path="/newUser" component={NewUser} />
     <Route path="/editUser" component={EditUser} isPrivate />
+    <Route path="/forgotPassword" component={ForgotPassword} />
   </Switch>
 );
 
