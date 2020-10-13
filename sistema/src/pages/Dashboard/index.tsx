@@ -193,7 +193,7 @@ const Dashboard: React.FC = () => {
                 </h1>
               </header>
               <div>
-                <div>
+                <div className="consultas">
                   <TaskItem
                     task={tasks[1]}
                     handleEditTask={handleEditTask}

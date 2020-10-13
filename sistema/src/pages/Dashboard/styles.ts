@@ -25,6 +25,10 @@ export const Main = styled.div`
     color: #163a7c;
   }
 
+  .consultas {
+    color: #064e0e;
+  }
+
   .botoes {
     display: flex;
     flex-direction: column;
