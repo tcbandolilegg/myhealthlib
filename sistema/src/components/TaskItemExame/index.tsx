@@ -14,7 +14,7 @@ import {
   SquareIcon,
 } from './styles';
 
-interface TaskItem {
+interface TaskItemExame {
   id: string;
   title: string;
   description?: string;
@@ -24,12 +24,12 @@ interface TaskItem {
 }
 
 interface Props {
-  task: TaskItem;
-  handleEditTask: (task: TaskItem) => void;
+  task: TaskItemExame;
+  handleEditTask: (task: TaskItemExame) => void;
   handleDeleteTask: (id: string) => void;
 }
 
-const TaskItem: React.FC<Props> = ({
+const TaskItemExame: React.FC<Props> = ({
   task,
   handleEditTask,
   handleDeleteTask,
@@ -117,4 +117,4 @@ const TaskItem: React.FC<Props> = ({
   );
 };
 
-export default TaskItem;
+export default TaskItemExame;

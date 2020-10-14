@@ -9,6 +9,7 @@ import EditUser from '../pages/EditUser';
 
 import NewUser from '../pages/NewUser';
 import ForgotPassword from '../pages/ForgotPassword';
+import ListaConsultas from '../pages/ListaConsultas';
 
 const Routes: React.FC = () => (
   <Switch>
@@ -17,6 +18,10 @@ const Routes: React.FC = () => (
     <Route path="/newUser" component={NewUser} />
     <Route path="/editUser" component={EditUser} isPrivate />
     <Route path="/forgotPassword" component={ForgotPassword} />
+    <Route path="/listaConsultas" component={ListaConsultas} />
+    <Route path="/listaExames" component={ListaConsultas} />
+    <Route path="/novaConsulta" component={ListaConsultas} />
+    <Route path="/novoExame" component={ListaConsultas} />
   </Switch>
 );
 

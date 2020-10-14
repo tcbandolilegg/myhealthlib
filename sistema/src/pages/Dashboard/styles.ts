@@ -23,23 +23,74 @@ export const Main = styled.div`
 
   > h1 {
     color: #163a7c;
+    flex-direction: column;
+  }
+
+  > h5 {
+    flex-direction: column;
+    color: #163a7c;
   }
 
   .consultas {
     color: #064e0e;
   }
+`;
+
+export const LeftSide = styled.div`
+  padding: 0 var(--horizontalPadding);
+  color: #163a7c;
+  @media (min-width: 768px) {
+    width: 30%;
+  }
+
+  > h1 {
+    color: #163a7c;
+  }
+`;
+
+export const Middle = styled.div`
+  padding: 0 var(--horizontalPadding);
+  color: #163a7c;
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+`;
+
+export const RightSide = styled.div`
+  padding: 0 var(--horizontalPadding);
+  color: #163a7c;
+  @media (min-width: 768px) {
+    width: 20%;
+  }
+
+  > div {
+    margin-top: var(--verticalPadding);
+  }
 
   .botoes {
+    margin-top: 82px;
     display: flex;
+    // @media (min-width: 768px) {
+    //   width: 50%;
     flex-direction: column;
+    align: right;
 
     > button {
+      align-self: flex-end;
+      text-align: center;
+      width: 170px;
       margin-bottom: 10px;
+      padding: 10px;
       font-weight: 600;
       border-radius: 8px;
       border: 0;
-      background: #177722;
-      color: #fff;
+      background: #fff;
+      color: #177722;
+
+      &:hover {
+        background: #177722;
+        color: #fff;
+      }
 
       display: flex;
       flex-direction: row;
@@ -47,7 +98,8 @@ export const Main = styled.div`
 
       .text {
         padding: 16px;
-        padding: 16px 24px;
+        text-align: center;
+        align: center;
       }
 
       .icon {
@@ -63,29 +115,11 @@ export const Main = styled.div`
   }
 `;
 
-export const LeftSide = styled.div`
-  padding: 0 var(--horizontalPadding);
-  color: #163a7c;
-  @media (min-width: 768px) {
-    width: 25%;
-  }
-
-  > h1 {
-    color: #163a7c;
-  }
-`;
-
-export const RightSide = styled.div`
-  padding: 0 var(--horizontalPadding);
-  color: #163a7c;
-  @media (min-width: 768px) {
-    width: 75%;
-  }
-`;
-
 export const Tasks = styled.div`
   margin-top: var(--verticalPadding);
 
+  // Esse sinal de > aqui serve pra indicar que é o primeiro elemento dentro dessa div
+  // aqui é o primeio header dentro da div
   > header {
     display: flex;
     align-items: center;
@@ -93,22 +127,26 @@ export const Tasks = styled.div`
     margin: 20px 0;
     color: #163a7c;
 
+    //Aqui é o primeiro h1 dentro do header
     > h1 {
+      display: flex;
       font-size: 32px;
       font-weight: normal;
       color: #163a7c;
+      flex-direction: row;
 
       > span {
         font-weight: 900;
-        color: #f3ab2a;
+        color: #177722;
       }
     }
 
+    // Aqui é o primeiro button dentro do header, mas no header não tem button                                                                    n     a
     > button {
       font-weight: 600;
       border-radius: 8px;
       border: 0;
-      background: #d5922a;
+      background: #177722;
       color: #fff;
 
       display: flex;
@@ -122,7 +160,7 @@ export const Tasks = styled.div`
       .icon {
         display: flex;
         padding: 16px 16px;
-        background: #f3ab2a;
+        background: #177722;
         border-radius: 0 8px 8px 0;
         margin: 0 auto;
       }

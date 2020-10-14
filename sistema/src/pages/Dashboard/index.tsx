@@ -4,15 +4,18 @@ import { FiCheckSquare } from 'react-icons/fi';
 
 import { useToast } from '../../hooks/toast';
 
+import { useHistory, Link } from 'react-router-dom';
+
 // import Header from '../../components/Header';
 import ProfileData from '../../components/ProfileData';
 import ModalAddTask from '../../components/ModalAddTask';
 import ModalEditTask from '../../components/ModalEditTask';
 import TaskItem from '../../components/TaskItem';
+
 // Faz o import
 import Dropzone from '../../components/Dropzone';
 
-import { Container, Main, LeftSide, RightSide, Tasks } from './styles';
+import { Container, Main, LeftSide, Middle, RightSide, Tasks } from './styles';
 
 import logoImg from '../../assets/myhealthlib.png';
 import api from '../../services/api';
@@ -173,7 +176,7 @@ const Dashboard: React.FC = () => {
             />
           </LeftSide>
 
-          <RightSide>
+          <Middle>
             <ModalAddTask
               isOpen={modalOpen}
               setIsOpen={toggleModal}
@@ -188,58 +191,72 @@ const Dashboard: React.FC = () => {
             />
             <Tasks>
               <header>
-                <h1>
-                  <span>{taskQuantity}</span> Consultas cadastradas
-                </h1>
+                <h1>Compromissos cadastrados</h1>
               </header>
               <div>
-                <div className="consultas">
-                  <TaskItem
-                    task={tasks[1]}
-                    handleEditTask={handleEditTask}
-                    handleDeleteTask={handleDeleteTask}
-                  />
-                </div>
-                <div className="botoes">
-                  <button type="submit" onClick={toggleModal}>
-                    <p className="text">Nova consulta</p>
-                    <div className="icon">
-                      <FiCheckSquare size={24} />
-                    </div>
-                  </button>
+                <TaskItem
+                  task={tasks[1]}
+                  handleEditTask={handleEditTask}
+                  handleDeleteTask={handleDeleteTask}
+                />
 
-                  <button type="submit" onClick={toggleModal}>
-                    <p className="text">Nova exame</p>
-                    <div className="icon">
-                      <FiCheckSquare size={24} />
-                    </div>
-                  </button>
-
-                  <button type="submit" onClick={toggleModal}>
-                    <p className="text">Nova receita</p>
-                    <div className="icon">
-                      <FiCheckSquare size={24} />
-                    </div>
-                  </button>
-                </div>
+                <TaskItem
+                  task={tasks[1]}
+                  handleEditTask={handleEditTask}
+                  handleDeleteTask={handleDeleteTask}
+                />
               </div>
 
-              <div>
-                {/* {tasks &&
+              {/* {tasks &&
                   tasks.map(task => (
                     <TaskItem
                       key={task.id}
                       task={task}
                       handleEditTask={handleEditTask}
                       handleDeleteTask={handleDeleteTask}
-                    />
-                  ))} */}
-              </div>
+                      />
+                    ))} */}
+              <Dropzone onFileUploaded={setSelectedFile} />
             </Tasks>
 
             {/* E adiciona o componenete onde quiser na página */}
             {/* Chamada para o componente de upload de arquivo */}
-            <Dropzone onFileUploaded={setSelectedFile} />
+          </Middle>
+
+          <RightSide>
+            {/* Transfere os botões para ca, assim vai dar uma dividida melhor */}
+            <div className="botoes">
+              {/* <button type="submit" onClick={toggleModal}> */}
+              <button>
+                <Link to="/listaConsultas">Listar consultas</Link>
+              </button>
+
+              {/* // <button type="submit" onClick={toggleModal}> */}
+              <button>
+                <Link to="/listaExames">Listar Exames</Link>
+
+                {/* <div className="icon">
+                      <FiCheckSquare size={24} />
+                    </div> */}
+              </button>
+              {/* <button type="submit" onClick="\novaReceita">
+                <p className="text">Nova receita</p> */}
+              <button>
+                <Link to="/novaConsulta">Nova Consulta</Link>
+                {/* <div className="icon">
+                      <FiCheckSquare size={24} />
+                    </div> */}
+              </button>
+              <button>
+                <Link to="/novoExames">Novo Exame</Link>
+                {/* <button type="submit" onClick="\novoExame"> */}
+                {/* // <button type="submit" onClick={toggleModal}>
+                {/* <p className="text">Novo exame</p> */}{' '}
+                {/* <div className="icon">
+                      <FiCheckSquare size={24} />
+                    </div>*/}
+              </button>
+            </div>
           </RightSide>
         </Main>
       </Container>
