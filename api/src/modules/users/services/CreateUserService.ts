@@ -1,10 +1,11 @@
-import { hash } from 'bcryptjs';
 import { injectable, inject } from 'tsyringe';
 
 import AppError from '@shared/errors/AppError';
 
 import User from '../infra/typeorm/entities/User';
 import IUsersRepositories from '../repositories/IUsersRepository';
+
+import IHashProvider from '../providers/HashProvider/models/IHashProvider';
 
 interface IRequest {
   name: string;
@@ -23,6 +24,9 @@ class CreateUserService {
   constructor(
     @inject('UsersRepository')
     private usersRepository: IUsersRepositories,
+
+    @inject('HashProvider')
+    private hashProvider: IHashProvider,
   ) {}
 
   public async execute(userData: IRequest): Promise<User> {
@@ -40,7 +44,9 @@ class CreateUserService {
       throw new AppError('This CPF already used.');
     }
 
-    const hashedPassword = await hash(userData.password, 8);
+    const hashedPassword = await this.hashProvider.generateHash(
+      userData.password,
+    );
 
     const user = await this.usersRepository.create({
       name: userData.name,

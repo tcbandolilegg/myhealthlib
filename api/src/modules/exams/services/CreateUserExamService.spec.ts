@@ -1,3 +1,4 @@
+import FakeHashProvider from '@modules/users/providers/HashProvider/fakes/FakeHashProvider';
 import FakeUsersRepository from '@modules/users/repositories/fakes/FakeUsersRepository';
 import CreateUserService from '@modules/users/services/CreateUserService';
 import AppError from '@shared/errors/AppError';
@@ -8,8 +9,12 @@ describe('CreateExam', () => {
   it('should be able to create a new exam', async () => {
     const fakeExamsRepository = new FakeExamsRepository();
     const fakeUsersRepository = new FakeUsersRepository();
+    const fakeHashProvider = new FakeHashProvider();
 
-    const createUser = new CreateUserService(fakeUsersRepository);
+    const createUser = new CreateUserService(
+      fakeUsersRepository,
+      fakeHashProvider,
+    );
 
     const createExam = new CreateExamsService(
       fakeUsersRepository,

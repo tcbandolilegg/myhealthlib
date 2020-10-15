@@ -1,8 +1,9 @@
 import { injectable, inject } from 'tsyringe';
 
 import AppError from '@shared/errors/AppError';
-
+import IStorageProvider from '@shared/container/providers/StorageProvider/models/IStorageProvider';
 import IUsersRepository from '@modules/users/repositories/IUsersRepository';
+
 import Exam from '../infra/typeorm/entities/Exam';
 import IExamsRepository from '../repositories/IExamsRepository';
 
@@ -20,6 +21,9 @@ class CreateUserExamService {
 
     @inject('ExamsRepository')
     private examsRepository: IExamsRepository,
+
+    @inject('StorageProvider')
+    private storageProvider: IStorageProvider,
   ) {}
 
   public async execute({
@@ -33,17 +37,27 @@ class CreateUserExamService {
       throw new AppError('Only authenitcated users can add exams.', 401);
     }
 
-    try {
-      const exam = await this.examsRepository.create({
-        user_id,
-        exam: examFilename,
-        description,
-      });
+    const filename = await this.storageProvider.saveFile(examFilename);
 
-      return exam;
-    } catch (error) {
-      throw new AppError('Error while the creating a new consultation.');
-    }
+    const exam = await this.examsRepository.create({
+      user_id,
+      exam: filename,
+      description,
+    });
+
+    return exam;
+
+    // try {
+    //   const exam = await this.examsRepository.create({
+    //     user_id,
+    //     exam: examFilename,
+    //     description,
+    //   });
+
+    //   return exam;
+    // } catch (error) {
+    //   throw new AppError('Error while the creating a new consultation.');
+    // }
   }
 }
 
