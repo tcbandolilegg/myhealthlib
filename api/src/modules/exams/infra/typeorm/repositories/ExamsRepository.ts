@@ -4,7 +4,7 @@ import ICreateExamDTO from '@modules/exams/dtos/ICreateExamDTO';
 
 import Exam from '../entities/Exam';
 
-class UsersRepository implements IExamsRepository {
+class ExamsRepository implements IExamsRepository {
   private ormRepository: Repository<Exam>;
 
   constructor() {
@@ -12,22 +12,22 @@ class UsersRepository implements IExamsRepository {
   }
 
   public async findById(id: string): Promise<Exam | undefined> {
-    const user = await this.ormRepository.findOne(id);
+    const exam = await this.ormRepository.findOne(id);
 
-    return user;
+    return exam;
   }
 
   public async create(examData: ICreateExamDTO): Promise<Exam> {
-    const user = this.ormRepository.create(examData);
+    const exam = this.ormRepository.create(examData);
 
-    await this.ormRepository.save(user);
+    await this.ormRepository.save(exam);
 
-    return user;
+    return exam;
   }
 
-  public async save(user: Exam): Promise<Exam> {
-    return this.ormRepository.save(user);
+  public async save(exam: Exam): Promise<Exam> {
+    return this.ormRepository.save(exam);
   }
 }
 
-export default UsersRepository;
+export default ExamsRepository;

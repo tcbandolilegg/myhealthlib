@@ -1,7 +1,8 @@
+import AppError from '@shared/errors/AppError';
 import FakeHashProvider from '@modules/users/providers/HashProvider/fakes/FakeHashProvider';
+import FakeStorageProvider from '@shared/container/providers/StorageProvider/fakes/FakeStorageProvider';
 import FakeUsersRepository from '@modules/users/repositories/fakes/FakeUsersRepository';
 import CreateUserService from '@modules/users/services/CreateUserService';
-import AppError from '@shared/errors/AppError';
 import FakeExamsRepository from '../repositories/fakes/FakeExamsRepository';
 import CreateExamsService from './CreateUserExamService';
 
@@ -10,6 +11,7 @@ describe('CreateExam', () => {
     const fakeExamsRepository = new FakeExamsRepository();
     const fakeUsersRepository = new FakeUsersRepository();
     const fakeHashProvider = new FakeHashProvider();
+    const fakeStorageProvider = new FakeStorageProvider();
 
     const createUser = new CreateUserService(
       fakeUsersRepository,
@@ -19,6 +21,7 @@ describe('CreateExam', () => {
     const createExam = new CreateExamsService(
       fakeUsersRepository,
       fakeExamsRepository,
+      fakeStorageProvider,
     );
 
     const user = await createUser.execute({
@@ -45,13 +48,15 @@ describe('CreateExam', () => {
   it('should notbe able to create a new exam with a desauthenticated user', async () => {
     const fakeExamsRepository = new FakeExamsRepository();
     const fakeUsersRepository = new FakeUsersRepository();
+    const fakeStorageProvider = new FakeStorageProvider();
 
     const createExam = new CreateExamsService(
       fakeUsersRepository,
       fakeExamsRepository,
+      fakeStorageProvider,
     );
 
-    expect(
+    await expect(
       createExam.execute({
         user_id: 'non-valid-user-id',
         examFilename: 'Exam example',

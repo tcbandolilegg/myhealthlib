@@ -3,9 +3,8 @@ import { injectable, inject } from 'tsyringe';
 import AppError from '@shared/errors/AppError';
 import IStorageProvider from '@shared/container/providers/StorageProvider/models/IStorageProvider';
 import IUsersRepository from '@modules/users/repositories/IUsersRepository';
-
-import Exam from '../infra/typeorm/entities/Exam';
 import IExamsRepository from '../repositories/IExamsRepository';
+import Exam from '../infra/typeorm/entities/Exam';
 
 interface IRequest {
   user_id: string;
