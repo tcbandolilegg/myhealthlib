@@ -9,8 +9,8 @@ import ConsultationsRepository from '@modules/consultations/infra/typeorm/reposi
 import IUsersRepository from '@modules/users/repositories/IUsersRepository';
 import UsersRepository from '@modules/users/infra/typeorm/repositories/UsersRepository';
 
-// import IUserTokensRepository from '@modules/users/repositories/IUserTokensRepository';
-// import UserTokensRepository from '@modules/users/infra/typeorm/repositories/UserTokensRepository';
+import IUserTokensRepository from '@modules/users/repositories/IUserTokensRepository';
+import UserTokensRepository from '@modules/users/infra/typeorm/repositories/UserTokensRepository';
 
 import IExamsRepository from '@modules/exams/repositories/IExamsRepository';
 import ExamsRepository from '@modules/exams/infra/typeorm/repositories/ExamsRepository';
@@ -28,4 +28,9 @@ container.registerSingleton<IUsersRepository>(
 container.registerSingleton<IExamsRepository>(
   'ExamsRepository',
   ExamsRepository,
+);
+
+container.registerSingleton<IUserTokensRepository>(
+  'UserTokensRepository',
+  UserTokensRepository,
 );

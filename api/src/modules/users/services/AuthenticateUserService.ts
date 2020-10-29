@@ -23,11 +23,11 @@ interface IResponse {
 @injectable()
 class AuthenticateUserService {
   constructor(
-    @inject('UsersRepository')
-    private usersRepository: IUsersRepositories,
-
     @inject('HashProvider')
     private hashProvider: IHashProvider,
+
+    @inject('UsersRepository')
+    private usersRepository: IUsersRepositories,
   ) {}
 
   public async execute({ email, password }: IRequest): Promise<IResponse> {
