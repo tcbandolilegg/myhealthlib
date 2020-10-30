@@ -25,12 +25,12 @@ container.registerSingleton<IUsersRepository>(
   UsersRepository,
 );
 
-container.registerSingleton<IExamsRepository>(
-  'ExamsRepository',
-  ExamsRepository,
-);
-
 container.registerSingleton<IUserTokensRepository>(
   'UserTokensRepository',
   UserTokensRepository,
+);
+
+container.registerSingleton<IExamsRepository>(
+  'ExamsRepository',
+  ExamsRepository,
 );

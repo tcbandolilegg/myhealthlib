@@ -1,4 +1,5 @@
 import { injectable, inject } from 'tsyringe';
+import path from 'path';
 
 import AppError from '@shared/errors/AppError';
 import IMailProvider from '@shared/container/providers/MailProvider/models/IMailProvider';
@@ -30,12 +31,29 @@ class SendForgotPasswordEmailService {
       throw new AppError('User dos not exists');
     }
 
-    await this.userTokensRepository.generate(user.id);
+    const { token } = await this.userTokensRepository.generate(user.id);
 
-    this.mailprovider.sendMail(
-      email,
-      'Pedido de recuperação de senha recebido',
+    const forgotPaswordTemplate = path.resolve(
+      __dirname,
+      '..',
+      'views',
+      'forgot_password.hbs',
     );
+
+    await this.mailprovider.sendMail({
+      to: {
+        name: user.name,
+        email: user.email,
+      },
+      subject: '[MyHealthLib] Recuperação de senha',
+      templateData: {
+        file: forgotPaswordTemplate,
+        variables: {
+          name: user.name,
+          link: `http://localhost:3000/reset_password?token=${token}`,
+        },
+      },
+    });
   }
 }
 

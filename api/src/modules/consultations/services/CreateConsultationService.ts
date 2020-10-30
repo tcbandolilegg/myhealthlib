@@ -1,6 +1,7 @@
 import { inject, injectable } from 'tsyringe';
 
 import AppError from '@shared/errors/AppError';
+import IUsersRepositories from '@modules/users/repositories/IUsersRepository';
 
 import Consultation from '../infra/typeorm/entities/Consultation';
 import IConsultationsRepository from '../repositories/IConsultationsRepository';
@@ -16,6 +17,9 @@ interface IRequest {
 @injectable()
 class CreateConsultationService {
   constructor(
+    @inject('usersRepository')
+    private usersRepository: IUsersRepositories,
+
     @inject('ConsultationsRepository')
     private consultationsRepository: IConsultationsRepository,
   ) {}
@@ -27,19 +31,21 @@ class CreateConsultationService {
     description,
     date,
   }: IRequest): Promise<Consultation> {
-    try {
-      const consultation = await this.consultationsRepository.create({
-        user_id,
-        doctor,
-        specialty,
-        description,
-        date,
-      });
+    const user = await this.usersRepository.findById(user_id);
 
-      return consultation;
-    } catch (error) {
-      throw new AppError('Error while the creating a new consultation.');
+    if (!user) {
+      throw new AppError('User non-exists.', 401);
     }
+
+    const consultation = await this.consultationsRepository.create({
+      user_id,
+      doctor,
+      specialty,
+      description,
+      date,
+    });
+
+    return consultation;
   }
 }
 

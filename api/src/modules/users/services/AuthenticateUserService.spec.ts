@@ -67,8 +67,8 @@ describe('AuthenticateUser', () => {
       fakeHashProvider,
     );
     const authenticateUser = new AuthenticateUserService(
-      fakeHashProvider,
       fakeUsersRepository,
+      fakeHashProvider,
     );
 
     await createUser.execute({
