@@ -30,6 +30,16 @@ class ConsultationsRepository implements IConsultationsRepository {
 
     return consultation;
   }
+
+  public async findAllConsultations(user_id: string): Promise<Consultation[]> {
+    const consultations = this.ormRepository.find({
+      where: {
+        user_id,
+      },
+    });
+
+    return consultations;
+  }
 }
 
 export default ConsultationsRepository;

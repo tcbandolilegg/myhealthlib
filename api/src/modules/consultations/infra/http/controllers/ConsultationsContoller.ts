@@ -3,6 +3,7 @@ import { parseISO } from 'date-fns';
 import { container } from 'tsyringe';
 
 import CreateConsultationService from '@modules/consultations/services/CreateConsultationService';
+import ListConsultationsService from '@modules/consultations/services/ListConsultationsService';
 
 class ConsultationsController {
   public async create(request: Request, response: Response): Promise<Response> {
@@ -21,6 +22,16 @@ class ConsultationsController {
     });
 
     return response.json(consultation);
+  }
+
+  public async index(request: Request, response: Response): Promise<Response> {
+    const { user_id } = request.body;
+
+    const listConsultations = container.resolve(ListConsultationsService);
+
+    const consultations = await listConsultations.execute({ user_id });
+
+    return response.json(consultations);
   }
 }
 

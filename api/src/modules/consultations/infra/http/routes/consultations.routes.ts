@@ -10,9 +10,6 @@ consultationsRouter.use(ensureAuthenticated);
 
 consultationsRouter.post('/', consultationsContoller.create);
 
-// consultationsRouter.get('/', async (request, response) => {
-//   const consultations = await consultationsRepository.find();
+consultationsRouter.get('/', consultationsContoller.index);
 
-//   return response.json(consultations);
-// });
 export default consultationsRouter;

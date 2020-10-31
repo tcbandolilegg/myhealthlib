@@ -31,12 +31,12 @@
 - Para atualizar sua senha, o usuário deve informar a senha antiga;
 - Para atualizar sua senha, o usuário deve confirmar a nova senha;
 
-## Painel do usuário
+## Exames
 
 **RF**
 
-- O usuário deve poder listar todos os exames e consultas cadastrados;
-- O usuário deve poder cadastrar novos exames e consultas;
+- O usuário deve poder listar todos os exames cadastrados;
+- O usuário deve poder cadastrar novos exames;
 
 **RNF**
 
@@ -44,4 +44,23 @@
 
 **RN**
 
-- O usuário deve estar logado para listar e cadastrar exames e consultas;
+- O usuário deve estar logado para listar e cadastrar exames;
+
+## Consultas
+
+**RF**
+
+- O usuário deve poder agendar novas consultas;
+- O usuário deve poder listar todos as consultas cadastrados;
+- O usuário deve poder listar os dias de um mês com pelo menos uma consulta cadastrada;
+- O usuário deve poder listar as consultas cadastradas de um dia específico;
+
+**RNF**
+
+- A listagem de consutlas  deve ser armazenada em cache;
+
+**RN**
+
+- O usuário deve estar logado para listar e agendar consultas;
+- O usuário não pode agendar uma consulta em um horário  já ocupado;
+- O usuário não pode agendar uma consulta em um horário q já passou;
