@@ -1,7 +1,8 @@
-import { getRepository, Repository } from 'typeorm';
+import { getRepository, Repository, Raw } from 'typeorm';
 import IConsultationsRepository from '@modules/consultations/repositories/IConsultationsRepository';
 import ICreateConsultationDTO from '@modules/consultations/dtos/ICreateConsultationDTO';
 
+import IFindAllContultaionsInMonthDTO from '@modules/consultations/dtos/IFindAllContultaionsInMonthDTO';
 import Consultation from '../entities/Consultation';
 
 class ConsultationsRepository implements IConsultationsRepository {
@@ -35,6 +36,26 @@ class ConsultationsRepository implements IConsultationsRepository {
     const consultations = this.ormRepository.find({
       where: {
         user_id,
+      },
+    });
+
+    return consultations;
+  }
+
+  public async findAllConsultationsInMonth({
+    user_id,
+    year,
+    month,
+  }: IFindAllContultaionsInMonthDTO): Promise<Consultation[]> {
+    const parsedMonth = String(month).padStart(2, '0');
+
+    const consultations = this.ormRepository.find({
+      where: {
+        user_id,
+        date: Raw(
+          dateFieldName =>
+            `to_char(${dateFieldName}, 'MM-YYYY') = '${parsedMonth}-${year}'`,
+        ),
       },
     });
 
