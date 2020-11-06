@@ -7,7 +7,8 @@ import ListConsultationsService from '@modules/consultations/services/ListConsul
 
 class ConsultationsController {
   public async create(request: Request, response: Response): Promise<Response> {
-    const { user_id, doctor, specialty, description, date } = request.body;
+    const user_id = request.user.id;
+    const { doctor, specialty, description, date } = request.body;
 
     const parsedDate = parseISO(date);
 
@@ -25,7 +26,7 @@ class ConsultationsController {
   }
 
   public async index(request: Request, response: Response): Promise<Response> {
-    const { user_id } = request.body;
+    const user_id = request.user.id;
 
     const listConsultations = container.resolve(ListConsultationsService);
 

@@ -95,7 +95,7 @@ class UpdateProfileService {
       );
 
       if (!checkOldPassword) {
-        throw new AppError('Pld password does not match');
+        throw new AppError('Old password does not match');
       }
       user.password = await this.hashPRovider.generateHash(password);
     }

@@ -39,19 +39,23 @@ describe('CreateConsultation', () => {
       password: '123456',
     });
 
+    jest.spyOn(Date, 'now').mockImplementationOnce(() => {
+      return new Date(2020, 10, 12, 12).getTime();
+    });
+
     const consultation = await createConsultation.execute({
       user_id: user.id,
       doctor: 'Jhon Doe',
       specialty: 'Medical',
       description: 'Any description',
-      date: new Date(),
+      date: new Date(2020, 10, 12, 13),
     });
 
     expect(consultation).toHaveProperty('id');
     expect(consultation.user_id).toBe(user.id);
   });
 
-  it('should not be able to create a new consultation ', async () => {
+  it('should not be able to create a new consultation with a non-existing user', async () => {
     await expect(
       createConsultation.execute({
         user_id: 'non-existing',
@@ -59,6 +63,70 @@ describe('CreateConsultation', () => {
         specialty: 'Medical',
         description: 'Any description',
         date: new Date(),
+      }),
+    ).rejects.toBeInstanceOf(AppError);
+  });
+
+  it('should not be able to create a new consultation on a past date', async () => {
+    jest.spyOn(Date, 'now').mockImplementationOnce(() => {
+      return new Date(2020, 10, 12, 12).getTime();
+    });
+
+    const user = await createUser.execute({
+      name: 'Jhon Doe',
+      email: 'jhon@doe.com',
+      address: 'Address example',
+      address_two: 'Address complement',
+      city: 'Los Angeles',
+      uf: 'Cal',
+      cpf: '123456778912',
+      birth: '12/34/5678',
+      password: '123456',
+    });
+
+    await expect(
+      createConsultation.execute({
+        user_id: user.id,
+        doctor: 'Jhon Doe',
+        specialty: 'Medical',
+        description: 'Any description',
+        date: new Date(2020, 10, 12, 11),
+      }),
+    ).rejects.toBeInstanceOf(AppError);
+  });
+
+  it('should not be able to create a new consultation on the same date', async () => {
+    jest.spyOn(Date, 'now').mockImplementationOnce(() => {
+      return new Date(2020, 10, 12, 12).getTime();
+    });
+
+    const user = await createUser.execute({
+      name: 'Jhon Doe',
+      email: 'jhon@doe.com',
+      address: 'Address example',
+      address_two: 'Address complement',
+      city: 'Los Angeles',
+      uf: 'Cal',
+      cpf: '123456778912',
+      birth: '12/34/5678',
+      password: '123456',
+    });
+
+    await createConsultation.execute({
+      user_id: user.id,
+      doctor: 'Jhon Doe',
+      specialty: 'Medical',
+      description: 'Any description',
+      date: new Date(2020, 10, 12, 13),
+    });
+
+    await expect(
+      createConsultation.execute({
+        user_id: user.id,
+        doctor: 'Jhon Doe',
+        specialty: 'Medical',
+        description: 'Any description',
+        date: new Date(2020, 10, 12, 13),
       }),
     ).rejects.toBeInstanceOf(AppError);
   });

@@ -3,6 +3,7 @@ import IConsultationsRepository from '@modules/consultations/repositories/IConsu
 import ICreateConsultationDTO from '@modules/consultations/dtos/ICreateConsultationDTO';
 
 import IFindAllContultaionsInMonthDTO from '@modules/consultations/dtos/IFindAllContultaionsInMonthDTO';
+import IFindAllContultaionsInDayDTO from '@modules/consultations/dtos/IFindAllContultaionsInDayDTO';
 import Consultation from '../entities/Consultation';
 
 class ConsultationsRepository implements IConsultationsRepository {
@@ -32,6 +33,17 @@ class ConsultationsRepository implements IConsultationsRepository {
     return consultation;
   }
 
+  public async findByDate(
+    date: Date,
+    user_id: string,
+  ): Promise<Consultation | undefined> {
+    const findConsultation = await this.ormRepository.findOne({
+      where: { date, user_id },
+    });
+
+    return findConsultation;
+  }
+
   public async findAllConsultations(user_id: string): Promise<Consultation[]> {
     const consultations = this.ormRepository.find({
       where: {
@@ -55,6 +67,28 @@ class ConsultationsRepository implements IConsultationsRepository {
         date: Raw(
           dateFieldName =>
             `to_char(${dateFieldName}, 'MM-YYYY') = '${parsedMonth}-${year}'`,
+        ),
+      },
+    });
+
+    return consultations;
+  }
+
+  public async findAllConsultationsInDay({
+    user_id,
+    day,
+    year,
+    month,
+  }: IFindAllContultaionsInDayDTO): Promise<Consultation[]> {
+    const parsedDay = String(day).padStart(2, '0');
+    const parsedMonth = String(month).padStart(2, '0');
+
+    const consultations = this.ormRepository.find({
+      where: {
+        user_id,
+        date: Raw(
+          dateFieldName =>
+            `to_char(${dateFieldName}, 'DD-MM-YYYY') = '${parsedDay}-${parsedMonth}-${year}'`,
         ),
       },
     });

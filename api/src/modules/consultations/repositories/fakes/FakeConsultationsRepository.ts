@@ -1,9 +1,10 @@
 import { uuid } from 'uuidv4';
-import { getMonth, getYear } from 'date-fns';
+import { getDate, getMonth, getYear, isEqual } from 'date-fns';
 import IConsultationsRepository from '@modules/consultations/repositories/IConsultationsRepository';
 import ICreateConsultationDTO from '@modules/consultations/dtos/ICreateConsultationDTO';
 import Consultation from '@modules/consultations/infra/typeorm/entities/Consultation';
 import IFindAllContultaionsInMonthDTO from '@modules/consultations/dtos/IFindAllContultaionsInMonthDTO';
+import IFindAllContultaionsInDayDTO from '@modules/consultations/dtos/IFindAllContultaionsInDayDTO';
 
 class ConsultationsRepository implements IConsultationsRepository {
   private consultations: Consultation[] = [];
@@ -26,6 +27,18 @@ class ConsultationsRepository implements IConsultationsRepository {
     return consultation;
   }
 
+  public async findByDate(
+    date: Date,
+    user_id: string,
+  ): Promise<Consultation | undefined> {
+    const findConsultation = this.consultations.find(
+      consultation =>
+        isEqual(consultation.date, date) && consultation.user_id === user_id,
+    );
+
+    return findConsultation;
+  }
+
   public async findAllConsultations(user_id: string): Promise<Consultation[]> {
     let { consultations } = this;
 
@@ -44,6 +57,24 @@ class ConsultationsRepository implements IConsultationsRepository {
     const consultations = this.consultations.filter(consultation => {
       return (
         consultation.user_id === user_id &&
+        getMonth(consultation.date) + 1 === month &&
+        getYear(consultation.date) === year
+      );
+    });
+
+    return consultations;
+  }
+
+  public async findAllConsultationsInDay({
+    user_id,
+    day,
+    year,
+    month,
+  }: IFindAllContultaionsInDayDTO): Promise<Consultation[]> {
+    const consultations = this.consultations.filter(consultation => {
+      return (
+        consultation.user_id === user_id &&
+        getDate(consultation.date) === day &&
         getMonth(consultation.date) + 1 === month &&
         getYear(consultation.date) === year
       );

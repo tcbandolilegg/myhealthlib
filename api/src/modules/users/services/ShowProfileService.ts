@@ -12,7 +12,7 @@ interface IRequest {
 @injectable()
 class ShowProfileService {
   constructor(
-    @inject('usersRepository')
+    @inject('UsersRepository')
     private usersRepository: IUsersRepositories,
   ) {}
 
