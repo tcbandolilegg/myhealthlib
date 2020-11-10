@@ -25,14 +25,21 @@ import { Container, Title } from './styles';
 interface FormData {
   cpf: number;
   nome: string;
-  dataNascimento: string;
-  tipoLogradouro: string;
-  enderecoLogradouro: string;
-  enderecoNumero: number;
-  enderecoComplemento: string;
-  enderecoBairro: string;
-  codEstado: number;
-  codCidade: number;
+  birth: string;
+  address: string;
+  address_two: string;
+  password: string;
+  email: string;
+
+  // tipoLogradouro: string;
+  // enderecoLogradouro: string;
+  // enderecoNumero: number;
+  // enderecoComplemento: string;
+  // enderecoBairro: string;
+  // codEstado: number;
+  // codCidade: number;
+  city: string;
+  uf: string;
 }
 
 interface IBGEUfResponse {
@@ -103,26 +110,29 @@ const NewUser: React.FC = () => {
         formRef.current?.setErrors({});
 
         const schema = Yup.object().shape({
-          cpf: Yup.number().required('Preencha o numero do CPF'),
-          nome: Yup.string().required('Preencha o nome do nome do usuário'),
-          dataNascimento: Yup.string().required(
-            'Preencha a data de nascimento',
-          ),
+          cpf: Yup.string().required('Preencha o numero do CPF'),
+          name: Yup.string().required('Preencha o nome do  usuário'),
+          birth: Yup.string().required('Preencha a data de nascimento'),
+          address: Yup.string().required('Preencha o endereco'),
+          address_two: Yup.string().required('Preencha o endereco'),
+          email: Yup.string().required('Preencha o e-mail'),
+          password: Yup.string().required('Escolha a password'),
+
           // tem como utilizar .style.format para datas?
           // Para as datas, temos q fazer igual ao cpf com um input mask
-          tipoLogradouro: Yup.string().required(
-            'Preencha o tipo do Lougradouro',
-          ),
-          enderecoLogradouro: Yup.string().required(
-            'Preencha o nome do Logradouro',
-          ),
-          enderecoNumero: Yup.number().required('Preencha o numero'),
-          enderecoComplemento: Yup.string().required('Preencha o complemento'),
+          // tipoLogradouro: Yup.string().required(
+          //   'Preencha o tipo do Lougradouro',
+          // ),
+          // enderecoLogradouro: Yup.string().required(
+          //   'Preencha o nome do Logradouro',
+          // ),
+          // enderecoNumero: Yup.number().required('Preencha o numero'),
+          // enderecoComplemento: Yup.string().required('Preencha o complemento'),
 
-          enderecoBairro: Yup.string().required('Preencha o bairro'),
+          // enderecoBairro: Yup.string().required('Preencha o bairro'),
 
-          codEstado: Yup.number().required('Escolha o Estado'),
-          codCidade: Yup.number().required('Escolha a Cidade'),
+          uf: Yup.string().required('Escolha o Estado'),
+          city: Yup.string().required('Escolha a Cidade'),
         });
 
         await schema.validate(data, {
@@ -133,17 +143,9 @@ const NewUser: React.FC = () => {
         // Só ajustar o form de acordo e
         // Preencher com os dados do form
 
-        // await api.post('users', {
-        //   name: ,
-        //   password: ,
-        //   email: ,
-        //   cpf: ,
-        //   birth: ,
-        //   address: ,
-        //   address_two: ,
-        //   city: ,
-        //   uf: ,
-        // });
+        const response = await api.post('/users', data);
+
+        console.log(response);
 
         addToast({
           type: 'success',
@@ -178,11 +180,13 @@ const NewUser: React.FC = () => {
             <InputMask mask="999.999.999-99">
               {() => <Input name="cpf" placeholder="CPF somente numeros" />}
             </InputMask>
-            <Input name="nome" placeholder="Nome" />
+            <Input name="name" placeholder="Nome" />
+            <Input name="email" placeholder="E-mail" />
+            <Input name="password" placeholder="Password" />
 
             <InputMask mask="99/99/9999">
               {() => (
-                <Input name="dataNascimento" placeholder="Data de nascimento" />
+                <Input name="birth" placeholder="Data de nascimento" />
               )}
             </InputMask>
             {/* <Input name="codEstado" placeholder="Estado" /> */}
@@ -224,16 +228,17 @@ const NewUser: React.FC = () => {
               </div>
             </div>
 
-            <Input
+            {/* <Input
               name="tipoLogradouro"
-              placeholder="Rua, Avenida, Beco, Alameda, etc"
-            />
-            <Input name="enderecoLogradouro" placeholder="Nome do logradouro" />
+              placeholder="Rua, Avenida, Beco, Alameda, etc"/> 
+             <Input name="enderecoLogradouro" placeholder="Nome do logradouro" />
             <Input name="enderecoNumero" placeholder="Número do logradouro" />
             <Input name="enderecoComplemento" placeholder="Complemento" />
-            <Input name="enderecoBairro" placeholder="Bairro" />
+            <Input name="enderecoBairro" placeholder="Bairro" /> 
             <Input name="codEstado" placeholder="Estado" />
-            <Input name="codCidade" placeholder="Cidade" />
+            <Input name="codCidade" placeholder="Cidade" />*/}
+            <Input name="address" placeholder="Endereço" />
+            <Input name="address_two" placeholder="Endereço continuação" />
 
             <Button type="submit">Salvar</Button>
 
