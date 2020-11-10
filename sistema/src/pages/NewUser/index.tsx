@@ -12,15 +12,15 @@ import * as Yup from 'yup';
 import axios from 'axios';
 import InputMask from 'react-input-mask';
 
-// import api from '../../services/api';
+import api from '../../services/api';
 import getValidationErrors from '../../utils/getValidationErrors';
+import { useToast } from '../../hooks/toast';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 // import Header from '../../components/Header';
 
 import { Container, Title } from './styles';
-// import { AxiosInterceptorManager } from 'axios';
 
 interface FormData {
   cpf: number;
@@ -45,6 +45,7 @@ interface IBGECityResponse {
 
 const NewUser: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
+  const { addToast } = useToast();
   const [ufs, setUfs] = useState<string[]>([]);
   const [cities, setCities] = useState<string[]>([]);
   const [selectedUf, setSelectedUf] = useState('0');
@@ -102,15 +103,15 @@ const NewUser: React.FC = () => {
         formRef.current?.setErrors({});
 
         const schema = Yup.object().shape({
-          // cpf: ,
           cpf: Yup.number().required('Preencha o numero do CPF'),
           nome: Yup.string().required('Preencha o nome do nome do usuário'),
           dataNascimento: Yup.string().required(
             'Preencha a data de nascimento',
           ),
           // tem como utilizar .style.format para datas?
+          // Para as datas, temos q fazer igual ao cpf com um input mask
           tipoLogradouro: Yup.string().required(
-            'Preencha o typo do Lougradouro',
+            'Preencha o tipo do Lougradouro',
           ),
           enderecoLogradouro: Yup.string().required(
             'Preencha o nome do Logradouro',
@@ -128,6 +129,28 @@ const NewUser: React.FC = () => {
           abortEarly: false,
         });
 
+        // Esses são os campos para cadastro na api
+        // Só ajustar o form de acordo e
+        // Preencher com os dados do form
+
+        // await api.post('users', {
+        //   name: ,
+        //   password: ,
+        //   email: ,
+        //   cpf: ,
+        //   birth: ,
+        //   address: ,
+        //   address_two: ,
+        //   city: ,
+        //   uf: ,
+        // });
+
+        addToast({
+          type: 'success',
+          title: 'Cadastro realizado',
+          description: 'Você já pode fazer seu login no MyHealthLib',
+        });
+
         history.push('/dashboard');
       } catch (err) {
         if (err instanceof Yup.ValidationError) {
@@ -135,9 +158,15 @@ const NewUser: React.FC = () => {
 
           formRef.current?.setErrors(errors);
         }
+
+        addToast({
+          type: 'error',
+          title: 'Erro no cadastro',
+          description: 'Ocorreu um erro ao fazer cadastro, tente novamente.',
+        });
       }
     },
-    [history],
+    [history, addToast],
   );
   return (
     <>

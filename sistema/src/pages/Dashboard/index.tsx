@@ -1,10 +1,9 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { uuid } from 'uuidv4';
 import { FiCheckSquare } from 'react-icons/fi';
+import { useHistory, Link } from 'react-router-dom';
 
 import { useToast } from '../../hooks/toast';
-
-import { useHistory, Link } from 'react-router-dom';
 
 // import Header from '../../components/Header';
 import ProfileData from '../../components/ProfileData';
@@ -226,13 +225,11 @@ const Dashboard: React.FC = () => {
           <RightSide>
             {/* Transfere os botões para ca, assim vai dar uma dividida melhor */}
             <div className="botoes">
-              {/* <button type="submit" onClick={toggleModal}> */}
-              <button>
+              <button type="submit" onClick={toggleModal}>
                 <Link to="/listaConsultas">Listar consultas</Link>
               </button>
 
-              {/* // <button type="submit" onClick={toggleModal}> */}
-              <button>
+              <button type="submit" onClick={toggleModal}>
                 <Link to="/listaExames">Listar Exames</Link>
 
                 {/* <div className="icon">
@@ -254,7 +251,7 @@ const Dashboard: React.FC = () => {
                 {/* <p className="text">Novo exame</p> */}{' '}
                 {/* <div className="icon">
                       <FiCheckSquare size={24} />
-                    </div>*/}
+                    </div> */}
               </button>
             </div>
           </RightSide>
