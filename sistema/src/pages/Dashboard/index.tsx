@@ -5,7 +5,7 @@ import { useHistory, Link } from 'react-router-dom';
 
 import { useToast } from '../../hooks/toast';
 
-// import Header from '../../components/Header';
+import Header from '../../components/Header';
 import ProfileData from '../../components/ProfileData';
 import ModalAddTask from '../../components/ModalAddTask';
 import ModalEditTask from '../../components/ModalEditTask';
@@ -161,6 +161,7 @@ const Dashboard: React.FC = () => {
 
   return (
     <>
+      <Header />
       <Container>
         <Main>
           <LeftSide>

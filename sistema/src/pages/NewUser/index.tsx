@@ -110,42 +110,24 @@ const NewUser: React.FC = () => {
         formRef.current?.setErrors({});
 
         const schema = Yup.object().shape({
-          cpf: Yup.string().required('Preencha o numero do CPF'),
           name: Yup.string().required('Preencha o nome do  usuário'),
+          password: Yup.string().required('Escolha a password'),
+          email: Yup.string().required('Preencha o e-mail'),
+          cpf: Yup.string().required('Preencha o numero do CPF'),
           birth: Yup.string().required('Preencha a data de nascimento'),
           address: Yup.string().required('Preencha o endereco'),
           address_two: Yup.string().required('Preencha o endereco'),
-          email: Yup.string().required('Preencha o e-mail'),
-          password: Yup.string().required('Escolha a password'),
-
-          // tem como utilizar .style.format para datas?
-          // Para as datas, temos q fazer igual ao cpf com um input mask
-          // tipoLogradouro: Yup.string().required(
-          //   'Preencha o tipo do Lougradouro',
-          // ),
-          // enderecoLogradouro: Yup.string().required(
-          //   'Preencha o nome do Logradouro',
-          // ),
-          // enderecoNumero: Yup.number().required('Preencha o numero'),
-          // enderecoComplemento: Yup.string().required('Preencha o complemento'),
-
-          // enderecoBairro: Yup.string().required('Preencha o bairro'),
-
-          uf: Yup.string().required('Escolha o Estado'),
           city: Yup.string().required('Escolha a Cidade'),
+          uf: Yup.string().required('Escolha o Estado'),
         });
 
         await schema.validate(data, {
           abortEarly: false,
         });
 
-        // Esses são os campos para cadastro na api
-        // Só ajustar o form de acordo e
-        // Preencher com os dados do form
+        console.log(data);
 
-        const response = await api.post('/users', data);
-
-        console.log(response);
+        await api.post('users', data);
 
         addToast({
           type: 'success',
@@ -177,24 +159,22 @@ const NewUser: React.FC = () => {
         <Container>
           <Title>Novo usuário</Title>
           <Form ref={formRef} onSubmit={handleSubmit}>
-            <InputMask mask="999.999.999-99">
-              {() => <Input name="cpf" placeholder="CPF somente numeros" />}
-            </InputMask>
+            {/* <InputMask mask="999.999.999-99"> */}
+            <Input name="cpf" placeholder="CPF somente numeros" />
+            {/* </InputMask> */}
             <Input name="name" placeholder="Nome" />
             <Input name="email" placeholder="E-mail" />
             <Input name="password" placeholder="Password" />
 
-            <InputMask mask="99/99/9999">
-              {() => (
-                <Input name="birth" placeholder="Data de nascimento" />
-              )}
-            </InputMask>
+            {/* <InputMask mask="99/99/9999"> */}
+            <Input name="birth" placeholder="Data de nascimento" />
+            {/* </InputMask> */}
             {/* <Input name="codEstado" placeholder="Estado" /> */}
             {/* <Input name="codCidade" placeholder="cidade" /> */}
 
-            <div className="field-group">
+            {/* <div className="field-group">
               <div className="field">
-                {/* <label htmlFor="uf">Estado (UF)</label> */}
+                {/* <label htmlFor="uf">Estado (UF)</label>
                 <select
                   name="uf"
                   id="uf"
@@ -211,7 +191,7 @@ const NewUser: React.FC = () => {
               </div>
 
               <div className="field">
-                {/* <label htmlFor="city">City</label> */}
+                {/* <label htmlFor="city">City</label>
                 <select
                   name="city"
                   id="city"
@@ -228,15 +208,15 @@ const NewUser: React.FC = () => {
               </div>
             </div>
 
-            {/* <Input
+            <Input
               name="tipoLogradouro"
-              placeholder="Rua, Avenida, Beco, Alameda, etc"/> 
+              placeholder="Rua, Avenida, Beco, Alameda, etc"/>
              <Input name="enderecoLogradouro" placeholder="Nome do logradouro" />
             <Input name="enderecoNumero" placeholder="Número do logradouro" />
             <Input name="enderecoComplemento" placeholder="Complemento" />
-            <Input name="enderecoBairro" placeholder="Bairro" /> 
-            <Input name="codEstado" placeholder="Estado" />
-            <Input name="codCidade" placeholder="Cidade" />*/}
+            <Input name="enderecoBairro" placeholder="Bairro" /> */}
+            <Input name="uf" placeholder="Estado" />
+            <Input name="city" placeholder="Cidade" />
             <Input name="address" placeholder="Endereço" />
             <Input name="address_two" placeholder="Endereço continuação" />
 

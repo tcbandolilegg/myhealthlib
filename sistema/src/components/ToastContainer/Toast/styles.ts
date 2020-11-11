@@ -1,9 +1,10 @@
+/* eslint-disable camelcase */
 import styled, { css } from 'styled-components';
 import { animated } from 'react-spring';
 
 interface ContainerProps {
   type?: 'success' | 'error' | 'info';
-  hasDescription: boolean;
+  has_description: boolean;
 }
 
 const toastTypeVariations = {
@@ -63,7 +64,7 @@ export const Container = styled(animated.div)<ContainerProps>`
   }
 
   ${props =>
-    !props.hasDescription &&
+    !props.has_description &&
     css`
       align-items: center;
 

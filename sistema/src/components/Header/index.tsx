@@ -12,7 +12,7 @@ import logoImg from '../../assets/myhealthlib.png';
 import { Container } from './styles';
 
 const Header: React.FC = () => {
-  const { nome, logOut } = useAuth();
+  const { user, logOut } = useAuth();
 
   const handleLogOut = useCallback(() => {
     logOut();
@@ -32,7 +32,7 @@ const Header: React.FC = () => {
         <ul>
           <li>
             <span>
-              Bem vindo <strong>{nome}</strong>
+              Bem vindo <strong>{user.user}</strong>
             </span>
           </li>
           <li>
